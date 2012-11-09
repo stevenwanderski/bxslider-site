@@ -1,0 +1,153 @@
+/** FONTELLO TEXT ICONS
+================================================**/
+
+@font-face {
+  font-family: 'fontello';
+  src: url("fontS/fontello.eot");
+  src: url("fontS/fontello.eot?#iefix") format('embedded-opentype'),
+			 url("fonts/fontello.woff") format('woff'),
+			 url("fonts/fontello.ttf") format('truetype'),
+			 url("fonts/fontello.svg#fontello") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-fontello"]:before,
+[class*=" icon-fontello"]:before {
+  font-family: 'fontello';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  color: #000;
+  line-height: 1em;
+}
+
+.icon-fontello-plus:before { content: '\2b'; } /* '+' */
+.icon-fontello-down:before { content: '\2193'; } /* '↓' */
+.icon-fontello-resize-full:before { content: '\e744'; } /* '' */
+.icon-fontello-github:before { content: '\f308'; } /* '' */
+.icon-fontello-thumbs-up:before { content: '\1f44d'; } /* '\1f44d' */
+
+
+/** ICOMOON TEXT ICONS
+================================================**/
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.svg#icomoon') format('svg'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+[class^="icon-icomoon"]:before,
+[class*=" icon-icomoon"]:before {
+	font-family: 'icomoon';
+	font-style: normal;
+	speak: none;
+	font-weight: normal;
+	color: #000;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-icomoon-tablet:before {content: "\e001";}
+.icon-icomoon-desktop:before {content: "\e002";}
+.icon-icomoon-phone:before {content: "\e000";}
+.icon-icomoon-bx-star:before {content: "\e004";}
+.icon-icomoon-github:before {content: "\e005";}
+.icon-icomoon-beer:before {content: "\e003";}
+
+
+/** KIEV FONT IMPORT
+================================================**/
+
+@font-face {
+	font-family: 'KievitWeb';
+	src: url('fonts/KievitWeb.eot?#iefix') format('embedded-opentype'), 
+			 url('fonts/KievitWeb.woff') format('woff'),
+			 url('fonts/kievitcomp-bold-webfont.svg#KievitComp-BoldRegular') format('svg');
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'KievitWeb';
+	src: url('fonts/KievitWeb-Bold.eot?#iefix') format('embedded-opentype'), 
+			 url('fonts/KievitWeb-Bold.woff') format('woff'),
+			 url('fonts/kievitcomp-bold-webfont.svg#KievitComp-BoldRegular') format('svg');
+	font-weight: bold;
+}
+
+/** RESET AND CLEARFIX
+================================================**/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/** TYPOGRAPHY
+================================================**/
+
+
+/** LAYOUT
+================================================**/
+
+
+
+
+
+
+	
