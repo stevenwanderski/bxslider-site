@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+  <title><%= @title %> | Responsive jQuery Slider | bxSlider</title>
+	<link rel="stylesheet" href="/css/styles.css" type="text/css" />
+</head>
+
+<body>
+	
+	<header><%= erb(:"partials/header", :layout => false) %></header>
+	
+	<section id="main"><%= yield %></section>
+
+	<footer><%= erb(:"partials/footer", :layout => false) %></footer>
+
+</body>
+
+</html>
