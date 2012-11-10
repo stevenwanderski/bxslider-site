@@ -3,11 +3,12 @@
 </div>
 
 <nav>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/examples">Examples</a></li>
-    <li><a href="/options">Options</a></li>
-    <li><a href="/faqs">FAQs</a></li>
-  </ul>
-  <div class="download"><a class="btn" href="/lib/jquery.bxslider.zip"><span class="icon-fontello-down"></span> Download</a></div>
+  <a href="/" <%= 'class="active"' if @title == 'Home' %>>Home</a>
+  <a href="/examples">Examples</a>
+  <a href="/options">Options</a>
+  <a href="/faqs">FAQs</a>
 </nav>
+
+<div class="download">
+  <a class="btn" href="/lib/jquery.bxslider.zip"><span class="icon-fontello-down"></span> Download</a>
+</div>

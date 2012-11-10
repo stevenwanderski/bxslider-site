@@ -11,11 +11,11 @@
 
 <body>
 	
-	<header><%= erb(:"partials/header", :layout => false) %></header>
+	<header><div class="inner clearfix"><%= erb(:"partials/header", :layout => false) %></div></header>
 	
 	<section id="main"><%= yield %></section>
 
-	<footer><%= erb(:"partials/footer", :layout => false) %></footer>
+	<footer><div class="inner clearfix"><%= erb(:"partials/footer", :layout => false) %></div></footer>
 
 </body>
 

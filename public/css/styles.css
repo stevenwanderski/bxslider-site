@@ -23,7 +23,6 @@
   width: 1em;
   margin-right: 0.2em;
   text-align: center;
-  color: #000;
   line-height: 1em;
 }
 
@@ -55,7 +54,6 @@
 	font-style: normal;
 	speak: none;
 	font-weight: normal;
-	color: #000;
 	-webkit-font-smoothing: antialiased;
 }
 .icon-icomoon-tablet:before {content: "\e001";}
@@ -115,6 +113,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	color: #414141;
+	font-family: "Helvetica", "Arial", sans-serif;
 }
 ol, ul {
 	list-style: none;
@@ -141,13 +141,173 @@ table {
 /** TYPOGRAPHY
 ================================================**/
 
+a {
+	color: #5280dd;
+	text-decoration: none;
+}
 
 /** LAYOUT
 ================================================**/
 
+.inner {
+	width: 1000px;
+	position: relative;
+	margin: 0 auto;
+}
 
+#main {
+	padding: 50px 0;
+}
 
+/** HEADER
+================================================**/
 
+header {
+	background: #e0e0e0;
+	border-bottom: solid 3px #c3c3c3;
+}
 
+.logo {
+	float: left;
+	font-size: 2.25em;
+	font-family: "KievitWeb", "Arial";
+	padding: 18px 0;
+}
 
+.logo a {
+	color: #414141;
+	font-weight: bold;
+}
+
+.icon-icomoon-bx-star {
+	color: #de3329;
+	position: relative;
+	top: 4px;
+}
+
+header .download {
+	position: absolute;
+	top: 27px;
+	right: 0;
+}
+
+nav {
+	position: absolute;
+	top: 31px;
+	right: 150px;
+	font-family: "KievitWeb", "Arial";
+}
+
+nav a {
+	font-size: 1.1em;
+	font-weight: bold;
+	padding: 0 10px;
+	color: #414141;
+}
+
+nav a.active,
+nav a:hover {
+	color: #de3329;
+}
+
+header .btn {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow: 0 5px 0 #365491;
+	-webkit-box-shadow: 0 5px 0 #365491;
+	box-shadow: 0 5px 0 #365491;
+	background: #5280dd;
+	color: #fff;
+	padding: 5px 14px 3px;
+	font-weight: bold;
+	font-size: 1.1em;
+	position: relative;
+	font-family: "KievitWeb", "Arial";
+}
+
+header .btn:hover {
+	background: #72cb76;
+	-moz-box-shadow: 0 5px 0 #549557;
+	-webkit-box-shadow: 0 5px 0 #549557;
+	box-shadow: 0 5px 0 #549557;
+}
+
+header .btn:active {
+	top: 5px;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+/** FOOTER
+================================================**/
+
+footer {
+	background: #e0e0e0;
+	border-top: solid 3px #c3c3c3;
+	padding: 40px 0;
+	font-family: "KievitWeb", "Arial";
+}
+
+footer p {
+	font-size: 1.25em;
+	margin-bottom: 5px;
+}
+
+footer h4 {
+	font-size: 1.25em;
+	font-weight: bold;
+}
+
+footer .left {
+	float: left;
+	width: 500px;
+}
+
+/** RESPONSIVE BREAKPOINTS
+================================================**/
+
+@media(max-width: 1040px){
+
+	header .inner {
+		width: 100%;
+	}
 	
+	header .logo {
+		padding-left: 20px;
+	}
+	
+	header .download {
+		right: 20px;
+	}
+	
+	header nav {
+		right: 170px;
+	}
+	
+}
+
+@media(max-width: 700px){
+
+	header .logo {
+		margin: 0 auto;
+		float: none;
+		text-align: center;
+		padding: 10px 0;
+	}
+	
+	header nav {
+		position: static;
+		text-align: center;
+	}
+	
+	header .download {
+		position: static;
+		text-align: center;
+		margin: 25px 0;
+	}
+	
+}
+
+
