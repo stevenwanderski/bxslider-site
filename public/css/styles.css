@@ -30,7 +30,7 @@
 .icon-fontello-down:before { content: '\2193'; } /* '↓' */
 .icon-fontello-resize-full:before { content: '\e744'; } /* '' */
 .icon-fontello-github:before { content: '\f308'; } /* '' */
-.icon-fontello-thumbs-up:before { content: '\1f44d'; } /* '\1f44d' */
+.icon-fontello-thumbs-up:before { content: '\1f44d'; } /* ''' */
 
 
 /** ICOMOON TEXT ICONS
@@ -56,9 +56,9 @@
 	font-weight: normal;
 	-webkit-font-smoothing: antialiased;
 }
-.icon-icomoon-tablet:before {content: "\e001";}
+.icon-icomoon-tablet:before {content: "\e000";}
 .icon-icomoon-desktop:before {content: "\e002";}
-.icon-icomoon-phone:before {content: "\e000";}
+.icon-icomoon-phone:before {content: "\e001";}
 .icon-icomoon-bx-star:before {content: "\e004";}
 .icon-icomoon-github:before {content: "\e005";}
 .icon-icomoon-beer:before {content: "\e003";}
@@ -115,6 +115,7 @@ body {
 	line-height: 1;
 	color: #414141;
 	font-family: "Helvetica", "Arial", sans-serif;
+	background: #f5f5f5;
 }
 ol, ul {
 	list-style: none;
@@ -146,6 +147,21 @@ a {
 	text-decoration: none;
 }
 
+h1, h2, h3, h4 {
+	font-family: "KievitWeb", "Arial";
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 3.5em;
+}
+
+p.pop {
+	font-family: "KievitWeb", "Arial";
+	font-size: 2em;
+	font-weight: bold;
+}
+
 /** LAYOUT
 ================================================**/
 
@@ -158,6 +174,52 @@ a {
 #main {
 	padding: 50px 0;
 }
+
+/** HOME
+================================================**/
+
+.home h1 {
+	text-align: center;
+	line-height: 1.25em;
+}
+
+.pictogram {
+	margin: 60px 0 90px 20px;
+	text-align: center;
+}
+
+.pictogram div {
+	display: inline-block;
+	position: relative;
+}
+
+.pictogram .icon-icomoon-desktop {
+	font-size: 8em;
+}
+
+.pictogram .icon-icomoon-tablet {
+	font-size: 6em;
+	top: -15px;
+}
+
+.pictogram .icon-icomoon-phone {
+	font-size: 4em;
+	top: -30px;
+}
+
+.pictogram .icon-fontello-thumbs-up {
+	font-size: 7em;
+	top: -30px;
+}
+
+.pictogram .operator {
+	color: #c5c5c5;
+	margin: 0 20px;
+	top: -45px;
+	font-size: 3.5em;
+	font-weight: bold;
+}
+
 
 /** HEADER
 ================================================**/
@@ -246,12 +308,12 @@ header .btn:active {
 footer {
 	background: #e0e0e0;
 	border-top: solid 3px #c3c3c3;
-	padding: 40px 0;
+	padding: 40px 0 65px;
 	font-family: "KievitWeb", "Arial";
 }
 
 footer p {
-	font-size: 1.25em;
+	font-size: 1em;
 	margin-bottom: 5px;
 }
 
@@ -265,12 +327,20 @@ footer .left {
 	width: 500px;
 }
 
+footer .first h4 {
+	padding-top: 3px;
+}
+
+footer .icon-icomoon-bx-star {
+	top: 2px;
+}
+
 /** RESPONSIVE BREAKPOINTS
 ================================================**/
 
 @media(max-width: 1040px){
 
-	header .inner {
+	.inner {
 		width: 100%;
 	}
 	
@@ -284,6 +354,25 @@ footer .left {
 	
 	header nav {
 		right: 170px;
+	}
+	
+	footer .left {
+		width: auto;
+		float: none;
+		padding-left: 20px;
+	}
+	
+	footer .first {
+		margin-bottom: 30px;
+	}
+	
+	.home h1 {
+		width: 90%;
+		margin: 0 auto;
+	}
+	
+	.pictogram .operator {
+		margin: 0 18px;
 	}
 	
 }
@@ -308,6 +397,39 @@ footer .left {
 		margin: 25px 0;
 	}
 	
+	.home h1 {
+		font-size: 2.25em;
+	}
+	
+	.pictogram {
+		font-size: 80%;
+	}
+	
+	.pictogram .operator {
+		margin: 0 5px;
+		top: -40px;
+	}
+	
 }
 
+@media(max-width: 500px){
+	
+	#main {
+		padding-top: 20px;
+	}
+	
+	.pictogram {
+		font-size: 65%;
+		margin: 30px 0;
+	}
+	
+	.pictogram .operator {
+		top: -30px;
+	}
+	
+	footer {
+		font-size: 85%;
+	}
+	
+}
 

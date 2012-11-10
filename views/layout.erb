@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
   <title><%= @title %> | Responsive jQuery Slider | bxSlider</title>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" href="/lib/jquery.bxslider.css" type="text/css" />
 	<link rel="stylesheet" href="/css/styles.css" type="text/css" />
 	
@@ -9,11 +10,11 @@
 	<script src="/js/scripts.js"></script>
 </head>
 
-<body>
+<body class="<%= @title.downcase %>">
 	
 	<header><div class="inner clearfix"><%= erb(:"partials/header", :layout => false) %></div></header>
 	
-	<section id="main"><%= yield %></section>
+	<section id="main"><div class="inner clearfix"><%= yield %></div></section>
 
 	<footer><div class="inner clearfix"><%= erb(:"partials/footer", :layout => false) %></div></footer>
 
