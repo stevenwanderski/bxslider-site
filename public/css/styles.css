@@ -3,8 +3,8 @@
 
 @font-face {
   font-family: 'fontello';
-  src: url("fontS/fontello.eot");
-  src: url("fontS/fontello.eot?#iefix") format('embedded-opentype'),
+  src: url("fonts/fontello.eot");
+  src: url("fonts/fontello.eot?#iefix") format('embedded-opentype'),
 			 url("fonts/fontello.woff") format('woff'),
 			 url("fonts/fontello.ttf") format('truetype'),
 			 url("fonts/fontello.svg#fontello") format('svg');
@@ -26,12 +26,10 @@
   line-height: 1em;
 }
 
-.icon-fontello-plus:before { content: '\2b'; } /* '+' */
 .icon-fontello-down:before { content: '\2193'; } /* '↓' */
 .icon-fontello-resize-full:before { content: '\e744'; } /* '' */
 .icon-fontello-github:before { content: '\f308'; } /* '' */
-.icon-fontello-thumbs-up:before { content: '\1f44d'; } /* ''' */
-
+.icon-fontello-thumbs-up:before { content: '\2a'; } /* '*' */
 
 /** ICOMOON TEXT ICONS
 ================================================**/
@@ -156,6 +154,21 @@ h1 {
 	font-size: 3.5em;
 }
 
+h2 {
+	font-size: 2.375em;
+	margin-bottom: 35px;
+}
+
+h3 {
+	font-size: 1.375em;
+	margin-bottom: 10px;
+}
+
+p {
+	font-size: 1em;
+	line-height: 1.5em;
+}
+
 p.pop {
 	font-family: "KievitWeb", "Arial";
 	font-size: 2em;
@@ -173,6 +186,19 @@ p.pop {
 
 #main {
 	padding: 50px 0;
+}
+
+#primary {
+	width: 720px;
+	display: inline-block;
+	margin-right: 40px;
+	vertical-align: top;
+}
+
+aside {
+	width: 230px;
+	display: inline-block;
+	vertical-align: top;
 }
 
 /** HOME
@@ -220,6 +246,85 @@ p.pop {
 	font-weight: bold;
 }
 
+.step {
+	margin-bottom: 45px;
+}
+
+/** SIDEBAR
+================================================**/
+
+aside .block-advert {
+	padding-bottom: 30px;
+}
+
+aside .block-buttons {
+	border-top: solid #c2c2c2 1px;
+	border-bottom: solid #c2c2c2 1px;
+	padding: 30px 0 35px;
+}
+
+aside .btn {
+	display: block;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow: 0 5px 0 #9f9f9f;
+	-webkit-box-shadow: 0 5px 0 #9f9f9f;
+	box-shadow: 0 5px 0 #9f9f9f;
+	background: #d8d8d8;
+	color: #414141;
+	padding: 5px 14px 3px;
+	font-weight: bold;
+	font-size: 1.5em;
+	font-family: "KievitWeb", "Arial";
+	position: relative;
+}
+
+aside .btn span {
+	font-weight: normal;
+	position: relative;
+	top: 2px;
+	padding-right: 4px;
+}
+
+aside .btn-donate {
+	margin-bottom: 20px;
+}
+
+aside .btn-donate span {
+	font-size: 1.1em;
+	padding-right: 6px;
+}
+
+aside .btn:hover {
+/*	background: #ccc;*/
+	color: #5280dd;
+}
+
+aside .btn:hover span {
+	color: #414141;
+}
+
+aside .btn:active {
+	top: 5px;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+aside h4 {
+	font-size: 1.375em;
+	line-height: 1.25em;
+	margin-bottom: 8px;
+}
+
+aside .block-about {
+	padding-top: 30px;
+}
+
+aside .block-about p {
+	line-height: 1.25em;
+}
 
 /** HEADER
 ================================================**/
@@ -403,6 +508,8 @@ footer .icon-icomoon-bx-star {
 	
 	.pictogram {
 		font-size: 80%;
+		margin-top: 30px;
+		margin-bottom: 30px;
 	}
 	
 	.pictogram .operator {
@@ -410,21 +517,32 @@ footer .icon-icomoon-bx-star {
 		top: -40px;
 	}
 	
-}
-
-@media(max-width: 500px){
-	
 	#main {
 		padding-top: 20px;
 	}
 	
+}
+
+@media(max-width: 500px){
+	
 	.pictogram {
 		font-size: 65%;
-		margin: 30px 0;
 	}
 	
 	.pictogram .operator {
 		top: -30px;
+	}
+	
+	.pictogram .icon-icomoon-tablet {
+		top: -10px;
+	}
+	
+	.pictogram .icon-icomoon-phone {
+		top: -20px;
+	}
+	
+	.pictogram .icon-fontello-thumbs-up {
+		top: -25px;
 	}
 	
 	footer {
@@ -433,3 +551,18 @@ footer .icon-icomoon-bx-star {
 	
 }
 
+@media(max-width: 400px){
+	
+	.pictogram {
+		font-size: 45%;
+	}
+	
+	.home h1 {
+		font-size: 1.75em;
+	}
+	
+	nav a {
+		padding: 0 5px;
+	}
+	
+}

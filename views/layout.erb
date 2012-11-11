@@ -14,7 +14,31 @@
 	
 	<header><div class="inner clearfix"><%= erb(:"partials/header", :layout => false) %></div></header>
 	
-	<section id="main"><div class="inner clearfix"><%= yield %></div></section>
+	<section id="main">
+		<div class="inner clearfix">
+			
+			<%= erb(:"partials/pictogram", :layout => false) if @front %>
+		
+			<div id="primary"><%= yield %></div>
+	
+			<aside>
+
+			  <div class="block block-advert">advert here</div>
+
+			  <div class="block block-buttons">
+			    <a href="" class="btn btn-donate"><span class="icon-icomoon-beer"></span> Buy me a beer</a>
+			    <a href="https://github.com/wandoledzep/bxslider-4" target="_blank" class="btn"><span class="icon-icomoon-github"></span> View on Github</a>
+			  </div>
+				
+				<div class="block block-about">
+				  <h4>Wondering how bxSlider was made?</h4>
+				  <p><a href="/about">Click here to see the annotated source code with a description of the coding process</a></p>
+				</div>
+
+			</aside>
+	
+		</div>
+	</section>
 
 	<footer><div class="inner clearfix"><%= erb(:"partials/footer", :layout => false) %></div></footer>
 

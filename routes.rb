@@ -1,7 +1,10 @@
 require 'sinatra'
 
+@front = false
+
 get '/' do
   @title = 'Home'
+  @front = true
   erb :home
 end
 

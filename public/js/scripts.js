@@ -1,6 +1,6 @@
 $(function(){
 	
-	$('a').click(function() {
+	$('.btn').click(function() {
 		return false;
 	});
 	
