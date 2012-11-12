@@ -60,7 +60,7 @@
 .icon-icomoon-bx-star:before {content: "\e004";}
 .icon-icomoon-github:before {content: "\e005";}
 .icon-icomoon-beer:before {content: "\e003";}
-
+.icon-icomoon-double-arrow:before {content: "\e006";}
 
 /** KIEV FONT IMPORT
 ================================================**/
@@ -199,6 +199,7 @@ pre {
 
 #primary {
 	margin: 0 270px 0 0;
+	position: relative;
 }
 
 aside {
@@ -297,6 +298,71 @@ aside {
 	margin-bottom: 40px;
 }
 
+.reference-wrap {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #e4e4e4;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	
+}
+
+.reference-wrap h3 {
+	font-size: 1.125em;
+	margin: 0;
+	background: #e4e4e4;
+	padding: 10px 15px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	cursor: pointer;
+	text-align: right;
+}
+
+.reference-wrap h3 span {
+	color: #939393;
+	position: relative;
+	top: 2px;
+	margin-left: 5px;
+}
+
+.reference-content {
+	padding: 20px;
+	display: none;
+}
+
+.reference-content h4 {
+	margin-bottom: 5px;
+}
+
+.reference-content a {
+	display: block;
+	font-size: .8em;
+	padding: 2px 0;
+}
+
+.reference-content .col {
+	margin-bottom: 20px;
+}
+
+.reference-content .col-wrap {
+	width: 125px;
+	float: left;
+	margin-right: 20px;
+}
+
+.reference-content .col-wrap.last {
+	margin-right: 0;
+}
+
+.reference-content-inner {
+	width: 430px;
+	height: 300px;
+	overflow: auto;
+}
+
 /** SIDEBAR
 ================================================**/
 
@@ -391,6 +457,10 @@ header {
 .logo a {
 	color: #414141;
 	font-weight: bold;
+}
+
+.logo a:hover {
+	text-decoration: none;
 }
 
 .icon-icomoon-bx-star {
@@ -496,6 +566,10 @@ footer .icon-icomoon-bx-star {
 
 	.inner {
 		width: 100%;
+	}
+	
+	.reference-wrap {
+		right: 20px;
 	}
 	
 	aside {
@@ -629,6 +703,10 @@ footer .icon-icomoon-bx-star {
 	
 	.home .bx-wrapper {
 		margin-bottom: 10px;
+	}
+	
+	.reference-wrap {
+		display: none;
 	}
 	
 	footer {

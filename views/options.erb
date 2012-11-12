@@ -285,11 +285,83 @@ var slideQty = slider.getSlideCount();"
 <h1>Options</h1>
 <p class="intro">No two projects are the same. That is why bxSlider is packed full of options that allow the slider to adapt to the project’s specific needs. Check the <a href="/examples">examples</a> page for detailed implementations.</p>
 
+<div class="reference-wrap">
+  <h3>Quick options reference <span class="icon-icomoon-double-arrow"></span></h3>
+  <div class="reference-content clearfix"><div class="reference-content-inner">
+    
+    <div class="col-wrap">
+      <div class="col col-general">
+        <h4>General</h4>
+        <ul>
+        <% @options['General'].each do |name, val| %>
+          <li><a href=""><%= name %></a></li>
+        <% end %>
+        </ul>
+      </div>
+      <div class="col col-pager">
+        <h4>Pager</h4>
+        <ul>
+        <% @options['Pager'].each do |name, val| %>
+          <li><a href=""><%= name %></a></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="col-wrap">
+      <div class="col col-controls">
+        <h4>Controls</h4>
+        <ul>
+        <% @options['Controls'].each do |name, val| %>
+          <li><a href=""><%= name %></a></li>
+        <% end %>
+        </ul>
+      </div>
+      <div class="col col-auto">
+        <h4>Auto</h4>
+        <ul>
+        <% @options['Auto'].each do |name, val| %>
+          <li><a href=""><%= name %></a></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="col-wrap last">
+      <div class="col col-carousel">
+        <h4>Carousel</h4>
+        <ul>
+        <% @options['Carousel'].each do |name, val| %>
+          <li><a href=""><%= name %></a></li>
+        <% end %>
+        </ul>
+      </div>
+      <div class="col col-callbacks">
+        <h4>Callbacks</h4>
+        <ul>
+        <% @options['Callbacks'].each do |name, val| %>
+          <li><a href=""><%= name %></a></li>
+        <% end %>
+        </ul>
+      </div>
+      <div class="col col-pubic-methods">
+        <h4>Public methods</h4>
+        <ul>
+        <% @options['Public methods'].each do |name, val| %>
+          <li><a href=""><%= name %></a></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+    
+  </div></div>
+</div>
+
 <% @options.each do |cat, cat_vals| %>
   <div class="category-wrap">
     <h2><%= cat %></h2>
     <% cat_vals.each do |option, option_vals| %>
-      <div class="option-name"><%= option %></div>
+      <div class="option-name" id="<%= option %>"><%= option %></div>
       <div class="option-desc"><%= option_vals['desc'] %></div>
       <% if option_vals['default'] %>
       <pre><code language="javascript">default: <%= option_vals['default'] %>
