@@ -174,6 +174,11 @@ p {
 	color: #666;
 }
 
+p.intro {
+	font-size: 1.125em;
+	margin-bottom: 35px;
+}
+
 pre {
 	margin: 15px 0;
 	overflow: auto;
@@ -262,6 +267,34 @@ aside {
 	font-size: 1.5em;
 	font-weight: bold;
 	margin-bottom: 80px;
+}
+
+/** OPTIONS
+================================================**/
+
+.options h2 {
+	font-size: 1.5em;
+	margin-bottom: 15px;
+}
+
+.option-name {
+	font-weight: bold;
+	font-size: .875em;
+	margin-bottom: 2px;
+}
+
+.option-desc {
+	font-size: .8em;
+	line-height: 1.25em;
+	color: #666;
+}
+
+.options pre {
+	margin: 10px 0 25px;
+}
+
+.category-wrap {
+	margin-bottom: 40px;
 }
 
 /** SIDEBAR

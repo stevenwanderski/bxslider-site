@@ -3,10 +3,10 @@
 </div>
 
 <nav>
-  <a href="/" <%= 'class="active"' if @title == 'Home' %>>Home</a>
-  <a href="/examples">Examples</a>
-  <a href="/options">Options</a>
-  <a href="/faqs">FAQs</a>
+  <a href="/" <%= 'class="active"' if @front %>>Home</a>
+  <a href="/examples" <%= 'class="active"' if @title == 'Examples' %>>Examples</a>
+  <a href="/options" <%= 'class="active"' if @title == 'Options' %>>Options</a>
+  <a href="/faqs" <%= 'class="active"' if @title == 'FAQs' %>>FAQs</a>
 </nav>
 
 <div class="download">
