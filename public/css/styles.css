@@ -145,6 +145,10 @@ a {
 	text-decoration: none;
 }
 
+a:hover {
+	text-decoration: underline;
+}
+
 h1, h2, h3, h4 {
 	font-family: "KievitWeb", "Arial";
 	font-weight: bold;
@@ -167,12 +171,12 @@ h3 {
 p {
 	font-size: 1em;
 	line-height: 1.5em;
+	color: #666;
 }
 
-p.pop {
-	font-family: "KievitWeb", "Arial";
-	font-size: 2em;
-	font-weight: bold;
+pre {
+	margin: 15px 0;
+	overflow: auto;
 }
 
 /** LAYOUT
@@ -189,16 +193,12 @@ p.pop {
 }
 
 #primary {
-	width: 720px;
-	display: inline-block;
-	margin-right: 40px;
-	vertical-align: top;
+	margin: 0 270px 0 0;
 }
 
 aside {
 	width: 230px;
-	display: inline-block;
-	vertical-align: top;
+	float: right;
 }
 
 /** HOME
@@ -209,8 +209,14 @@ aside {
 	line-height: 1.25em;
 }
 
+.home .bx-wrapper {
+	margin: 30px auto 20px;
+	width: 90%;
+}
+
 .pictogram {
-	margin: 60px 0 90px 20px;
+/*	margin: 60px 0 90px 20px;*/
+	padding: 20px 0;
 	text-align: center;
 }
 
@@ -248,6 +254,14 @@ aside {
 
 .step {
 	margin-bottom: 45px;
+}
+
+.home p.pop {
+	color: #de3329;
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-bottom: 80px;
 }
 
 /** SIDEBAR
@@ -297,8 +311,8 @@ aside .btn-donate span {
 }
 
 aside .btn:hover {
-/*	background: #ccc;*/
 	color: #5280dd;
+	text-decoration: none;
 }
 
 aside .btn:hover span {
@@ -375,6 +389,7 @@ nav a {
 nav a.active,
 nav a:hover {
 	color: #de3329;
+	text-decoration: none;
 }
 
 header .btn {
@@ -398,6 +413,7 @@ header .btn:hover {
 	-moz-box-shadow: 0 5px 0 #549557;
 	-webkit-box-shadow: 0 5px 0 #549557;
 	box-shadow: 0 5px 0 #549557;
+	text-decoration: none;
 }
 
 header .btn:active {
@@ -449,6 +465,23 @@ footer .icon-icomoon-bx-star {
 		width: 100%;
 	}
 	
+	aside {
+		padding-right: 20px;
+	}
+	
+	#primary {
+		padding: 0 20px;
+	}
+	
+	.home h1 {
+		width: 90%;
+		margin: 0 auto;
+	}
+	
+	.pictogram .operator {
+		margin: 0 18px;
+	}
+	
 	header .logo {
 		padding-left: 20px;
 	}
@@ -471,18 +504,21 @@ footer .icon-icomoon-bx-star {
 		margin-bottom: 30px;
 	}
 	
-	.home h1 {
-		width: 90%;
-		margin: 0 auto;
-	}
-	
-	.pictogram .operator {
-		margin: 0 18px;
-	}
-	
 }
 
 @media(max-width: 700px){
+	
+	#primary {
+		margin: 0 0 370px 0;
+	}
+	
+	aside {
+		float: none;
+		position: absolute;
+		bottom: 0;
+		width: 70%;
+		padding: 0 20px;
+	}
 
 	header .logo {
 		margin: 0 auto;
@@ -545,6 +581,23 @@ footer .icon-icomoon-bx-star {
 		top: -25px;
 	}
 	
+	#primary {
+		font-size: 90%;
+	}
+	
+	aside {
+		font-size: 90%;
+	}
+	
+	.home p.pop {
+		font-size: 1.25em;
+		margin-bottom: 30px;
+	}
+	
+	.home .bx-wrapper {
+		margin-bottom: 10px;
+	}
+	
 	footer {
 		font-size: 85%;
 	}
@@ -565,4 +618,8 @@ footer .icon-icomoon-bx-star {
 		padding: 0 5px;
 	}
 	
+	#primary {
+		font-size: 100%;
+	}
+		
 }

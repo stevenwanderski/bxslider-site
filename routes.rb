@@ -2,6 +2,10 @@ require 'sinatra'
 
 @front = false
 
+# ===================================
+# ROUTES
+# ===================================
+
 get '/' do
   @title = 'Home'
   @front = true
@@ -26,4 +30,13 @@ end
 get '/examples/:title' do
   @title = 'Examples'
   erb :"examples/#{params[:title]}"
+end
+
+# ===================================
+# HELPERS
+# ===================================
+
+helpers do
+  include Rack::Utils
+  alias_method :h, :escape_html
 end

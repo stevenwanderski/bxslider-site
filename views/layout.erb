@@ -4,9 +4,11 @@
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" href="/lib/jquery.bxslider.css" type="text/css" />
 	<link rel="stylesheet" href="/css/styles.css" type="text/css" />
+	<link rel="stylesheet" href="/css/github.css" type="text/css" />
 	
 	<script src="/js/jquery.min.js"></script>
 	<script src="/lib/jquery.bxslider.min.js"></script>
+	<script src="/js/rainbow.min.js"></script>
 	<script src="/js/scripts.js"></script>
 </head>
 
@@ -18,11 +20,8 @@
 		<div class="inner clearfix">
 			
 			<%= erb(:"partials/pictogram", :layout => false) if @front %>
-		
-			<div id="primary"><%= yield %></div>
-	
+			
 			<aside>
-
 			  <div class="block block-advert">advert here</div>
 
 			  <div class="block block-buttons">
@@ -34,8 +33,9 @@
 				  <h4>Wondering how bxSlider was made?</h4>
 				  <p><a href="/about">Click here to see the annotated source code with a description of the coding process</a></p>
 				</div>
-
 			</aside>
+		
+			<div id="primary"><%= yield %></div>
 	
 		</div>
 	</section>

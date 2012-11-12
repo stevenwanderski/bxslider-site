@@ -1,28 +1,51 @@
+<%
+@step1 = '<!-- jQuery library (served from Google) -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<!-- bxSlider Javascript file -->
+<script src="/js/jquery.bxslider.min.js"></script>
+<!-- bxSlider CSS file -->
+<link href="/lib/jquery.bxslider.css" rel="stylesheet" />'
+
+@step2 = '<ul class="bxslider">
+  <li><img src="/images/pic1.jpg" /></li>
+  <li><img src="/images/pic2.jpg" /></li>
+  <li><img src="/images/pic3.jpg" /></li>
+  <li><img src="/images/pic4.jpg" /></li>
+</ul>'
+
+@step3 = '$(document).ready(function(){
+  $(\'.bxslider\').bxSlider();
+});'
+
+%>
+
 <section class="primary">
   
   <div class="slider">
     <!-- sample slider here -->
-    <p class="pop"><span class="icon-fontello-resize-full"></span> Resize your browser to see the slider adapt</p>
+    <!-- <p class="pop"><span class="icon-fontello-resize-full"></span> Resize your browser to see the slider adapt</p> -->
   </div>
   
   <h2>How to install</h2>
   
   <div class="step">
     <h3>Step 1: Link required files</h3>
-    <p>First and most important, the jQuery library needs to be included (no need to download - link directly from Google). Next, the bxSlider CSS file (for the theme) and the bxSlider Javascript file must be linked.</p>
-    <code>Some code here</code>
+    <p>First and most important, the jQuery library needs to be included (no need to download - link directly from Google). Next, download the package from this site and link the bxSlider CSS file (for the theme) and the bxSlider Javascript file.</p>
+    <pre><code data-language="html"><%= h @step1 %></code></pre>
   </div>
   
   <div class="step">
     <h3>Step 2: Create HTML markup</h3>
     <p>Create a &lt;ul class="bxslider"&gt; element, with a &lt;li&gt; for each slide. Slides can contain images, video, or any other HTML content!</p>
-    <code>Some code here</code>
+    <pre><code data-language="html"><%= h @step2 %></code></pre>
   </div>
   
   <div class="step">
     <h3>Step 3: Call the bxSlider</h3>
-    <p>Call .bxslider() on &lt;ul class="bxslider"&gt;</p>
-    <code>Some code here</code>
+    <p>Call .bxslider() on &lt;ul class="bxslider"&gt;. Note that the call must be made inside of a $(document).ready() call, or the plugin will not work!</p>
+    <pre><code data-language="javascript"><%= h @step3 %></code></pre>
   </div>
+  
+  <p>Check the <a href="/examples">examples</a> and <a href="/faqs">FAQs</a> for more information on installation and customization</p>
   
 </section>
