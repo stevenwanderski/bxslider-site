@@ -1,0 +1,23 @@
+<%
+@example = Hash.new
+
+@example['title'] = 'Image gallery with captions'
+
+@example['js'] = "
+$('.bxslider').bxSlider({
+  mode: 'fade',
+  captions: true
+});"
+
+@example['html'] = '
+<ul class="bxslider">
+  <li>Slide1</li>
+  <li>Slide2</li>
+</ul>'
+
+@example['note'] = "Some note"
+
+%>
+
+<%= erb(:"partials/example_item", :layout => false, :locals => { :example => @example }) %>
+

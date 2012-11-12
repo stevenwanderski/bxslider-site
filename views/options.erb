@@ -289,70 +289,16 @@ var slideQty = slider.getSlideCount();"
   <h3>Quick options reference <span class="icon-icomoon-double-arrow"></span></h3>
   <div class="reference-content clearfix"><div class="reference-content-inner">
     
-    <div class="col-wrap">
-      <div class="col col-general">
-        <h4>General</h4>
+    <% @options.each do |cat, cat_value| %>
+      <div class="col col-<%= cat.downcase %>">
+        <h4><%= cat %></h4>
         <ul>
-        <% @options['General'].each do |name, val| %>
-          <li><a href=""><%= name %></a></li>
-        <% end %>
+          <% cat_value.each do |name, name_val| %>
+            <li><a href="" data-name="<%= name %>"><%= name %></a></li>
+          <% end %>
         </ul>
       </div>
-      <div class="col col-pager">
-        <h4>Pager</h4>
-        <ul>
-        <% @options['Pager'].each do |name, val| %>
-          <li><a href=""><%= name %></a></li>
-        <% end %>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="col-wrap">
-      <div class="col col-controls">
-        <h4>Controls</h4>
-        <ul>
-        <% @options['Controls'].each do |name, val| %>
-          <li><a href=""><%= name %></a></li>
-        <% end %>
-        </ul>
-      </div>
-      <div class="col col-auto">
-        <h4>Auto</h4>
-        <ul>
-        <% @options['Auto'].each do |name, val| %>
-          <li><a href=""><%= name %></a></li>
-        <% end %>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="col-wrap last">
-      <div class="col col-carousel">
-        <h4>Carousel</h4>
-        <ul>
-        <% @options['Carousel'].each do |name, val| %>
-          <li><a href=""><%= name %></a></li>
-        <% end %>
-        </ul>
-      </div>
-      <div class="col col-callbacks">
-        <h4>Callbacks</h4>
-        <ul>
-        <% @options['Callbacks'].each do |name, val| %>
-          <li><a href=""><%= name %></a></li>
-        <% end %>
-        </ul>
-      </div>
-      <div class="col col-pubic-methods">
-        <h4>Public methods</h4>
-        <ul>
-        <% @options['Public methods'].each do |name, val| %>
-          <li><a href=""><%= name %></a></li>
-        <% end %>
-        </ul>
-      </div>
-    </div>
+    <% end %>
     
   </div></div>
 </div>

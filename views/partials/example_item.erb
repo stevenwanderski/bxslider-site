@@ -1,0 +1,27 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+    <%= @example['js'] %>
+  });
+</script>
+
+<h1><%= @example['title'] %></h1>
+
+<div class="slider"><%= @example['html'] %></div>
+
+<div class="code-switch">
+  <a href="" data-code="js" class="js active">JS</a>
+  <a href="" data-code="html" class="html">HTML</a>
+</div>
+
+<div class="code-wrap" data-showing="js">
+  <div data-code="js" class="code code-js active">
+    <pre><code data-language="javascript"><%= @example['js'].strip %></code></pre>
+  </div>
+  <div data-code="html" class="code code-html">
+    <pre><code data-language="html"><%= h @example['html'].strip %></code></pre>
+  </div>
+</div>
+
+<% if @example['note'] %>
+  <p class="note"><%= @example['note'] %></p>
+<% end %>

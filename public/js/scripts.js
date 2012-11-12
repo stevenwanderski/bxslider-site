@@ -4,13 +4,13 @@ $(function(){
 		return false;
 	});
 	
-	$('.bxslider').bxSlider({
+	$('.home .bxslider').bxSlider({
 		adaptiveHeight: false,
 		pager: false
 	});
 	
 	/**
-	 * Quick reference tool
+	 * QUICK REFERENCE
 	 */
 	
 	// check if the window bindings should be applied (only if the element is present)
@@ -24,7 +24,6 @@ $(function(){
 	
 		// scroll to the elements
 		$('.reference-content a').click(function(){
-			$('.reference-content').slideToggle(300);
 			var id = $(this).html();
 			$('html, body').animate({
 				scrollTop: $('#' + id).offset().top - 20
@@ -52,5 +51,25 @@ $(function(){
 			});
 		}
 	}
+	
+	/**
+	 * EXAMPLES
+	 */
+	
+	// JS / HTML code switcher
+	$('.code-switch a').click(function(){
+		if(!$(this).hasClass('active')){
+			$('.code-switch a').removeClass('active');
+			$(this).addClass('active');
+			var code = $(this).attr('data-code');
+			$('.code-wrap .active').fadeOut(100, function(){
+				$(this).removeClass('active');
+				$('.code-wrap .code[data-code="' + code + '"]').fadeIn(100).addClass('active');
+			});
+		}
+		return false;
+	});
+	
+	
 	
 });

@@ -270,8 +270,67 @@ aside {
 	margin-bottom: 80px;
 }
 
+/** EXAMPLES
+================================================**/
+
+.examples ol li {
+	list-style: decimal inside;
+	color: #666;
+	margin-bottom: 4px;
+}
+
+.example-item h1 {
+	font-size: 2.5em;
+	margin-bottom: 30px;
+}
+
+.code-switch {
+	margin-top: 20px;
+	height: 25px;
+}
+
+.code-switch a {
+	display: block;
+	width: 70px;
+	color: #fff;
+	text-align: center;
+	float: left;
+	background: #989898;
+	padding: 5px 0;
+	font-family: "Consolas", "Monaco", "Courier", serif;
+	font-size: .875em;
+}
+
+.code-switch a.active {
+	background: #5280dd;
+}
+
+.code-switch .js {
+	-moz-border-radius: 5px 0 0 5px;
+	-webkit-border-radius: 5px 0 0 5px;
+	border-radius: 5px 0 0 5px;
+}
+
+.code-switch .html {
+	-moz-border-radius: 0 5px 5px 0;
+	-webkit-border-radius: 0 5px 5px 0;
+	border-radius: 0 5px 5px 0;
+}
+
+.code-wrap .code {
+	display: none;
+}
+
+.code-wrap .code.active {
+	display: block;
+}
+
 /** OPTIONS
 ================================================**/
+
+.options h1 {
+	margin-bottom: 10px;
+}
 
 .options h2 {
 	font-size: 1.5em;
@@ -340,7 +399,7 @@ aside {
 .reference-content a {
 	display: block;
 	font-size: .8em;
-	padding: 2px 0;
+	padding: 3px 0;
 }
 
 .reference-content .col {
@@ -348,17 +407,17 @@ aside {
 }
 
 .reference-content .col-wrap {
-	width: 125px;
+/*	width: 125px;
 	float: left;
 	margin-right: 20px;
-}
+*/}
 
 .reference-content .col-wrap.last {
 	margin-right: 0;
 }
 
 .reference-content-inner {
-	width: 430px;
+	/*width: 430px;*/
 	height: 300px;
 	overflow: auto;
 }
@@ -732,5 +791,5 @@ footer .icon-icomoon-bx-star {
 	#primary {
 		font-size: 100%;
 	}
-		
+			
 }
