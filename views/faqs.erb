@@ -1,0 +1,55 @@
+<h1>FAQs</h1>
+<p class="intro">Because everyone has questions.</p>
+
+<div class="questions">
+  
+  <div class="question">
+    <h3>What is this "jQuery" you speak of?</h3>
+    <p>jQuery is the most popular Javascript framework used today. It is used mostly for DOM manipulation (animating divs, changing dimensions, calculating positioning, etc..). However, it can be used for much more than that, such as AJAX, form validation, etc.. Almost every project in which I have played a role has used jQuery. So get to know it!</p>
+  </div>
+  
+  <div class="question">
+    <h3>I hate your theme. Do I have to use it?</h3>
+    <p>Absolutely not! Simply do not include the jquery.bxslider.css file and you will have a bare-bones slider, with no theme. Feel free to make yours look cooler than mine.</p>
+  </div>
+
+  <div class="question">
+    <h3>Nothing is working. What am I doing wrong?</h3>
+    <p>Here is a list of things to check that should solve most "not working" problems:</p>
+    <ul>
+      <li>Is the jQuery library included in the <code>&lt;head&gt;</code> of the document?</li>
+      <li>The jQuery library needs to be included BEFORE the jquery.bxslider.min.js file.</li>
+      <li>Is the jquery.bxslider.min.js file linked properly? Usually people will upload the file to a js directory, then link to it like so: <code>&lt;script src="js/jquery.bxslider.min.js"&gt;&lt;/script&gt;</code></li>
+      <li>Using Firebug (<a href="http://getfirebug.com/" target="_blank">http://getfirebug.com/</a>), check the console for any errors. Any Javascript errors can and will prevent the slider from functioning properly.</li>
+      <li>Are you calling <code>.bxSlider()</code> inside of a <code>$(document).ready();</code> call? For more info on the <code>.ready()</code> call, <a href="http://www.learningjquery.com/2006/09/introducing-document-ready" target="_blank">click here</a>.</li>
+    </ul>
+  </div>
+  
+  <div class="question">
+    <h3>My carousel is all jacked. What gives?</h3>
+    <p>When using a horizontal carousel (displaying multiple slides at once) the following three settings MUST be defined (vertical carousels can omit maxSlides):</p>
+    <ul>
+      <li>minSlides</li>
+      <li>maxSlides</li>
+      <li>slideWidth</li>
+    </ul>
+    <p>Also remember that all slides should be the same width.</p>
+  </div>
+  
+  <div class="question">
+    <h3>What browsers are supported?</h3>
+    <p>All modern versions of Firefox, Chrome, Safari, iOS, Android, and Internet Explorer have been tested and are supported. IE8 and IE7 have been tested and work just fine. But if you're supporting IE8 and below, have mercy on your poor soul.</p>
+  </div>
+  
+  <div class="question">
+    <h3>What does "responsive" mean?</h3>
+    <p>Instead of trying to concoct my own lame definition, learn from the pros by <a href="http://coding.smashingmagazine.com/2011/01/12/guidelines-for-responsive-web-design/" target="_blank">clicking here</a>.</p>
+  </div>
+  
+  <div class="question">
+    <h3>Can I include your slider in my commercial WordPress theme? Do I have to pay you? Is thing <em>really</em> free?</h3>
+    <p>The bxSlider is released under the WTFPL license - <a href="http://sam.zoy.org/wtfpl/" target="_blank">http://sam.zoy.org/wtfpl/</a> (love the name BTW). This means that you can literally do whatever you want with this plugin. If you like it and use it, buy me a beer for crying out loud!</p>
+  </div>
+  
+
+</div>

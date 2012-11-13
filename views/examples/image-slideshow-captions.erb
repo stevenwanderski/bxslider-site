@@ -11,13 +11,11 @@ $('.bxslider').bxSlider({
 
 @example['html'] = '
 <ul class="bxslider">
-  <li>Slide1</li>
-  <li>Slide2</li>
+  <li><img src="/images/hills.jpg" title="Rolling hills of green" /></li>
+  <li><img src="/images/trees.jpg" title="Some happy trees" /></li>
+  <li><img src="/images/trees2.jpg" title="Even more happy trees" /></li>
 </ul>'
-
-@example['note'] = "Some note"
 
 %>
 
 <%= erb(:"partials/example_item", :layout => false, :locals => { :example => @example }) %>
-

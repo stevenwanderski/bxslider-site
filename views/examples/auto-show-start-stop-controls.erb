@@ -1,0 +1,21 @@
+<%
+@example = Hash.new
+
+@example['title'] = 'Auto show with start / stop controls'
+
+@example['js'] = "
+$('.bxslider').bxSlider({
+  auto: true,
+  autoControls: true
+});"
+
+@example['html'] = '
+<ul class="bxslider">
+  <li><img src="/images/hills.jpg" /></li>
+  <li><img src="/images/trees.jpg" /></li>
+  <li><img src="/images/trees2.jpg" /></li>
+</ul>'
+
+%>
+
+<%= erb(:"partials/example_item", :layout => false, :locals => { :example => @example }) %>

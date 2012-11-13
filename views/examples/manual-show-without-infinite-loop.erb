@@ -1,0 +1,21 @@
+<%
+@example = Hash.new
+
+@example['title'] = 'Manual show without infinite loop'
+
+@example['js'] = "
+$('.bxslider').bxSlider({
+  infiniteLoop: false,
+  hideControlOnEnd: true
+});"
+
+@example['html'] = '
+<ul class="bxslider">
+  <li><img src="/images/hills.jpg" /></li>
+  <li><img src="/images/trees.jpg" /></li>
+  <li><img src="/images/trees2.jpg" /></li>
+</ul>'
+
+%>
+
+<%= erb(:"partials/example_item", :layout => false, :locals => { :example => @example }) %>

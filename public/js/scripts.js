@@ -6,7 +6,9 @@ $(function(){
 	
 	$('.home .bxslider').bxSlider({
 		adaptiveHeight: false,
-		pager: false
+		auto: true,
+		mode: 'fade',
+		pause: 4000
 	});
 	
 	/**

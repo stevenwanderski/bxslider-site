@@ -149,6 +149,10 @@ a:hover {
 	text-decoration: underline;
 }
 
+em {
+	font-style: italic;
+}
+
 h1, h2, h3, h4 {
 	font-family: "KievitWeb", "Arial";
 	font-weight: bold;
@@ -216,7 +220,7 @@ aside {
 }
 
 .home .bx-wrapper {
-	margin: 30px auto 20px;
+	margin: 30px auto 40px;
 	width: 90%;
 }
 
@@ -267,7 +271,7 @@ aside {
 	text-align: center;
 	font-size: 1.5em;
 	font-weight: bold;
-	margin-bottom: 80px;
+	margin: 6px 0 80px;
 }
 
 /** EXAMPLES
@@ -420,6 +424,37 @@ aside {
 	/*width: 430px;*/
 	height: 300px;
 	overflow: auto;
+}
+
+/** FAQS
+================================================**/
+
+.faqs h3 {
+	font-size: 1.15em;
+	line-height: 1.25em;
+	margin-bottom: 3px;
+}
+
+.faqs .questions p {
+	font-size: .875em;
+	line-height: 1.25em;
+	margin-bottom: 10px;
+}
+
+.faqs .question {
+	margin-bottom: 20px;
+}
+
+.faqs ul {
+	margin-left: 20px;
+}
+
+.faqs ul li {
+	color: #666;
+	font-size: .875em;
+	list-style: disc;
+	margin-bottom: 7px;
+	line-height: 1.25em;
 }
 
 /** SIDEBAR
