@@ -7,7 +7,7 @@ require 'sinatra'
 # ===================================
 
 get '/' do
-  @title = 'Home'
+  @title = 'jQuery Content Slider'
   @class = 'home'
   @front = true
   erb :home
