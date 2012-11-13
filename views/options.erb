@@ -310,10 +310,10 @@ var slideQty = slider.getSlideCount();"
       <div class="option-name" id="<%= option %>"><%= option %></div>
       <div class="option-desc"><%= option_vals['desc'] %></div>
       <% if option_vals['default'] %>
-      <pre><code language="javascript">default: <%= option_vals['default'] %>
+      <pre><code data-language="javascript">default: <%= option_vals['default'] %>
 options: <%= option_vals['options'] %></code></pre>
       <% elsif option_vals['example'] %>
-      <pre><code language="javascript">example:
+      <pre><code data-language="javascript">example:
 <%= option_vals['example'] %></code></pre>
       
       <% end %>

@@ -7,11 +7,6 @@
     <h3>What is this "jQuery" you speak of?</h3>
     <p>jQuery is the most popular Javascript framework used today. It is used mostly for DOM manipulation (animating divs, changing dimensions, calculating positioning, etc..). However, it can be used for much more than that, such as AJAX, form validation, etc.. Almost every project in which I have played a role has used jQuery. So get to know it!</p>
   </div>
-  
-  <div class="question">
-    <h3>I hate your theme. Do I have to use it?</h3>
-    <p>Absolutely not! Simply do not include the jquery.bxslider.css file and you will have a bare-bones slider, with no theme. Feel free to make yours look cooler than mine.</p>
-  </div>
 
   <div class="question">
     <h3>Nothing is working. What am I doing wrong?</h3>
@@ -21,7 +16,7 @@
       <li>The jQuery library needs to be included BEFORE the jquery.bxslider.min.js file.</li>
       <li>Is the jquery.bxslider.min.js file linked properly? Usually people will upload the file to a js directory, then link to it like so: <code>&lt;script src="js/jquery.bxslider.min.js"&gt;&lt;/script&gt;</code></li>
       <li>Using Firebug (<a href="http://getfirebug.com/" target="_blank">http://getfirebug.com/</a>), check the console for any errors. Any Javascript errors can and will prevent the slider from functioning properly.</li>
-      <li>Are you calling <code>.bxSlider()</code> inside of a <code>$(document).ready();</code> call? For more info on the <code>.ready()</code> call, <a href="http://www.learningjquery.com/2006/09/introducing-document-ready" target="_blank">click here</a>.</li>
+      <li>Are you calling .bxSlider() inside of a $(document).ready() call? For more info on the .ready() call, <a href="http://www.learningjquery.com/2006/09/introducing-document-ready" target="_blank">click here</a>.</li>
     </ul>
   </div>
   
@@ -34,6 +29,25 @@
       <li>slideWidth</li>
     </ul>
     <p>Also remember that all slides should be the same width.</p>
+  </div>
+  
+  <div class="question">
+    <h3>Why isn't my video responsive?</h3>
+    <p>To make all videos in a slider responsive, make sure the following is true:</p>
+    <ul>
+      <li>In the <code>&lt;head&gt;</code> of the document include the file: plugins/jquery.fitvids.js</li>
+      <li>Specify the following option: <code>video: true</code></li>
+    </ul>
+  </div>
+  
+  <div class="question">
+    <h3>Why don't the "Next" / "Prev" controls appear in the theme?</h3>
+    <p>The theme's images rely on the "images" folder included in the bxSlider package. Make sure that the "images" folder is in the same location as the jquery.bxslider.css file.</p>
+  </div>
+  
+  <div class="question">
+    <h3>I hate your theme. Do I have to use it?</h3>
+    <p>Absolutely not! Simply do not include the jquery.bxslider.css file and you will have a bare-bones slider, with no theme. Feel free to make yours look cooler than mine.</p>
   </div>
   
   <div class="question">
@@ -50,6 +64,5 @@
     <h3>Can I include your slider in my commercial WordPress theme? Do I have to pay you? Is thing <em>really</em> free?</h3>
     <p>The bxSlider is released under the WTFPL license - <a href="http://sam.zoy.org/wtfpl/" target="_blank">http://sam.zoy.org/wtfpl/</a> (love the name BTW). This means that you can literally do whatever you want with this plugin. If you like it and use it, buy me a beer for crying out loud!</p>
   </div>
-  
 
 </div>

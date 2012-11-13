@@ -37,6 +37,12 @@ get '/examples/:title' do
   erb :"examples/#{params[:title]}"
 end
 
+get '/about' do
+  @title = 'About'
+  @class = 'about'
+  erb :about
+end
+
 # ===================================
 # HELPERS
 # ===================================

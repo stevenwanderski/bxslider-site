@@ -153,6 +153,10 @@ em {
 	font-style: italic;
 }
 
+strong {
+	font-weight: bold;
+}
+
 h1, h2, h3, h4 {
 	font-family: "KievitWeb", "Arial";
 	font-weight: bold;
@@ -173,9 +177,10 @@ h3 {
 }
 
 p {
-	font-size: 1em;
-	line-height: 1.5em;
-	color: #666;
+	font-size: .875em;
+	line-height: 1.35em;
+	color: #555;
+	margin-bottom: 20px;
 }
 
 p.intro {
@@ -436,26 +441,32 @@ aside {
 }
 
 .faqs .questions p {
-	font-size: .875em;
-	line-height: 1.25em;
 	margin-bottom: 10px;
 }
 
 .faqs .question {
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 
-.faqs ul {
-	margin-left: 20px;
+.faqs ul,
+.about ul {
+	margin: 0 0 20px 20px;
 }
 
-.faqs ul li {
-	color: #666;
+.faqs ul li,
+.about ul li {
+	color: #555;
 	font-size: .875em;
 	list-style: disc;
 	margin-bottom: 7px;
 	line-height: 1.25em;
 }
+
+/** ABOUT
+================================================**/
+
+
+
 
 /** SIDEBAR
 ================================================**/
@@ -530,6 +541,7 @@ aside .block-about {
 }
 
 aside .block-about p {
+	font-size: 1em;
 	line-height: 1.25em;
 }
 
