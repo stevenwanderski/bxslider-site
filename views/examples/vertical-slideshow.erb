@@ -1,0 +1,21 @@
+<%
+@example = Hash.new
+
+@example['title'] = 'Vertical slideshow'
+
+@example['js'] = "
+$('.bxslider').bxSlider({
+  mode: 'vertical',
+  slideMargin: 5
+});"
+
+@example['html'] = '
+<ul class="bxslider">
+  <li><img src="/images/730_200/hill_trees.jpg" /></li>
+  <li><img src="/images/730_200/me_trees.jpg" /></li>
+  <li><img src="/images/730_200/houses.jpg" /></li>
+</ul>'
+
+%>
+
+<%= erb(:"partials/example_item", :layout => false, :locals => { :example => @example }) %>

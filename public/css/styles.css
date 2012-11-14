@@ -293,12 +293,6 @@ aside {
 /** EXAMPLES
 ================================================**/
 
-.examples ol li {
-	list-style: decimal inside;
-	color: #666;
-	margin-bottom: 4px;
-}
-
 .example-item h1 {
 	font-size: 2.5em;
 	margin-bottom: 30px;
@@ -343,6 +337,20 @@ aside {
 
 .code-wrap .code.active {
 	display: block;
+}
+
+.example-item .examples-list {
+	margin-top: 60px;
+}
+
+.examples-list ol li {
+	list-style: decimal inside;
+	color: #666;
+	margin-bottom: 4px;
+}
+
+.example-item ol li {
+	font-size: .875em;
 }
 
 /** OPTIONS
@@ -586,6 +594,7 @@ aside input[type="submit"] {
 	border: none;
 	font-size: .875em;
 	cursor: pointer;
+	-webkit-appearance: none;
 }
 
 aside input[type="submit"]:hover {
@@ -781,7 +790,7 @@ footer .icon-icomoon-bx-star {
 @media(max-width: 700px){
 	
 	#primary {
-		margin: 0 0 370px 0;
+		margin: 0 0 600px 0;
 	}
 	
 	aside {

@@ -25,3 +25,8 @@
 <% if @example['note'] %>
   <p class="note"><%= @example['note'] %></p>
 <% end %>
+
+<div class="examples-list">
+  <h3>Examples</h3>
+  <%= erb(:"partials/examples_list", :layout => false) %>
+</div>

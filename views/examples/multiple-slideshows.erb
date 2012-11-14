@@ -1,0 +1,41 @@
+<%
+@example = Hash.new
+
+@example['title'] = 'Multiple slideshows'
+
+@example['js'] = "
+$('#slider1').bxSlider({
+  mode: 'fade',
+  auto: true,
+  autoControls: true,
+  pause: 2000
+});
+
+$('#slider2').bxSlider({
+  auto: true,
+  autoControls: true,
+  pause: 3000,
+  slideMargin: 20
+});
+"
+
+@example['html'] = '
+<h3>Slideshow 1</h3>
+<ul id="slider1">
+  <li><img src="/images/730_200/hill_trees.jpg" /></li>
+  <li><img src="/images/730_200/me_trees.jpg" /></li>
+  <li><img src="/images/730_200/houses.jpg" /></li>
+</ul>
+
+<h3>Slideshow 2</h3>
+<ul id="slider2">
+  <li><img src="/images/730_200/tree_root.jpg" /></li>
+  <li><img src="/images/730_200/trees.jpg" /></li>
+  <li><img src="/images/730_200/hill_road.jpg" /></li>
+</ul>'
+
+@example['note'] = 'Note that parent elements do not need to have a classname of "bxslider". Simply use any jQuery selector to target the parent element, then call .bxSlider().'
+
+%>
+
+<%= erb(:"partials/example_item", :layout => false, :locals => { :example => @example }) %>

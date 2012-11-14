@@ -1,0 +1,28 @@
+<%
+@example = Hash.new
+
+@example['title'] = 'Custom next / prev control selectors'
+
+@example['js'] = "
+$('.bxslider').bxSlider({
+  nextSelector: '#slider-next',
+  prevSelector: '#slider-prev',
+  nextText: 'Onward &rarr;',
+  prevText: '&larr; Go back'
+});"
+
+@example['html'] = '
+<ul class="bxslider">
+  <li><img src="/images/730_200/hill_trees.jpg" /></li>
+  <li><img src="/images/730_200/me_trees.jpg" /></li>
+  <li><img src="/images/730_200/houses.jpg" /></li>
+</ul>
+
+<div class="outside">
+  <h3>This div is outside of the slider</h3>
+  <a href="" id="slider-prev"></a> | <a href="" id="slider-next"></a>
+</div>'
+
+%>
+
+<%= erb(:"partials/example_item", :layout => false, :locals => { :example => @example }) %>

@@ -21,6 +21,26 @@
   </div>
   
   <div class="question">
+    <h3>Does the parent element have to have the class "bxslider"?</h3>
+    <p>Nope! The slider does not care if the parent element (&lt;ul&gt; in the homepage example) has a classname. Simply target the parent element using any jQuery selector you desire. The following example is a completely legit slider setup:</p>
+    <p>HTML:</p>
+    <pre><code data-language="html"><div id="foobar">
+  <div>Child 1</div>
+  <div>Child 2</div>
+  <div>Child 3</div>
+</div></code></pre>
+    <p>JS:</p>
+    <pre><code data-language="javascript">$(document).ready(function(){
+  $('#foobar').bxSlider();
+});</code></pre>
+  </div>
+  
+  <div class="question">
+    <h3>Can I have more than one slideshow on a page?</h3>
+    <p>You betcha. <a href="/examples/multiple-slideshows">Check out the example</a>.</p>
+  </div>
+  
+  <div class="question">
     <h3>My carousel is all jacked. What gives?</h3>
     <p>When using a horizontal carousel (displaying multiple slides at once) the following three settings MUST be defined (vertical carousels can omit maxSlides):</p>
     <ul>
