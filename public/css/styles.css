@@ -222,11 +222,22 @@ aside {
 .home h1 {
 	text-align: center;
 	line-height: 1.25em;
+	font-size: 3.75em;
 }
 
 .home .bx-wrapper {
 	margin: 30px auto 40px;
-	width: 90%;
+}
+
+.home #primary ul {
+	margin: 0 0 40px 16px;
+}
+
+.home #primary li {
+	list-style: disc;
+	margin-bottom: 5px;
+	color: #555;
+	font-size: 1em;
 }
 
 .pictogram {
@@ -690,7 +701,12 @@ footer .icon-icomoon-bx-star {
 	
 	.home h1 {
 		width: 90%;
+		font-size: 3em;
 		margin: 0 auto;
+	}
+	
+	.home .bx-wrapper {
+		width: 90%;
 	}
 	
 	.pictogram .operator {
@@ -807,10 +823,6 @@ footer .icon-icomoon-bx-star {
 	.home p.pop {
 		font-size: 1.25em;
 		margin-bottom: 30px;
-	}
-	
-	.home .bx-wrapper {
-		margin-bottom: 10px;
 	}
 	
 	.reference-wrap {
