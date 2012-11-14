@@ -484,14 +484,17 @@ aside {
 /** SIDEBAR
 ================================================**/
 
+aside .block {
+	padding: 30px 0;
+	border-bottom: solid #c2c2c2 1px;
+}
+
 aside .block-advert {
-	padding-bottom: 30px;
+	padding-top: 0;
 }
 
 aside .block-buttons {
-	border-top: solid #c2c2c2 1px;
-	border-bottom: solid #c2c2c2 1px;
-	padding: 30px 0 35px;
+	padding-bottom: 35px;
 }
 
 aside .btn {
@@ -550,12 +553,50 @@ aside h4 {
 }
 
 aside .block-about {
-	padding-top: 30px;
+	border-bottom: 0;
+	margin-bottom: 0;
 }
 
-aside .block-about p {
+aside .block p {
 	font-size: 1em;
 	line-height: 1.25em;
+}
+
+aside input[type="text"] {
+	border: solid #c2c2c2 1px;
+	padding: 3px 5px;
+	display: block;
+	width: 93%;
+	margin-bottom: 10px;
+}
+
+aside label {
+	font-size: .875em;
+	margin-bottom: 3px;
+	display: block;
+}
+
+aside input[type="submit"] {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background: #5280dd;
+	color: #fff;
+	padding: 4px 10px;
+	border: none;
+	font-size: .875em;
+	cursor: pointer;
+}
+
+aside input[type="submit"]:hover {
+	background: #72cb76;
+}
+
+aside .block-signup .error {
+	display: none;
+	color: red;
+	font-size: .875em;
+	margin-bottom: 10px;
 }
 
 /** HEADER
