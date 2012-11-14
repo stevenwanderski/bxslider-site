@@ -1,0 +1,27 @@
+<%
+@example = Hash.new
+
+@example['title'] = 'Carousel - static number of slides'
+
+@example['js'] = "
+$('.bxslider').bxSlider({
+  minSlides: 2,
+  maxSlides: 2,
+  slideWidth: 360,
+  slideMargin: 10
+});"
+
+@example['html'] = '
+<ul class="bxslider">
+  <li><img src="/images/730_200/trees.jpg" /></li>
+  <li><img src="/images/730_200/tree_root.jpg" /></li>
+  <li><img src="/images/730_200/houses.jpg" /></li>
+  <li><img src="/images/730_200/hill_road.jpg" /></li>
+  <li><img src="/images/730_200/me_trees.jpg" /></li>
+  <li><img src="/images/730_200/hill_trees.jpg" /></li>
+</ul>'
+
+@example['note'] = 'This slider always displays no less than two slides (minSlides) and always displays no more than two slides (maxSlides). Therefore the carousel will always display two slides.'
+%>
+
+<%= erb(:"partials/example_item", :layout => false, :locals => { :example => @example }) %>
