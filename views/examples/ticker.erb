@@ -1,0 +1,31 @@
+<%
+@example = Hash.new
+
+@example['title'] = 'Ticker mode'
+
+@example['js'] = "
+$('.bxslider').bxSlider({
+  minSlides: 4,
+  maxSlides: 4,
+  slideWidth: 170,
+  slideMargin: 10,
+  ticker: true,
+  speed: 6000
+});"
+
+@example['html'] = '
+<ul class="bxslider">
+  <li><img src="/images/170_200/trees.jpg" /></li>
+  <li><img src="/images/170_200/tree_root.jpg" /></li>
+  <li><img src="/images/170_200/houses.jpg" /></li>
+  <li><img src="/images/170_200/hill_road.jpg" /></li>
+  <li><img src="/images/170_200/me_trees.jpg" /></li>
+  <li><img src="/images/170_200/hill_trees.jpg" /></li>
+  <li><img src="/images/170_200/mountain.jpg" /></li>
+  <li><img src="/images/170_200/houses.jpg" /></li>
+</ul>'
+
+@example['note'] = 'Note that in order to make the ticker appear slower, the speed value must be raised.'
+%>
+
+<%= erb(:"partials/example_item", :layout => false, :locals => { :example => @example }) %>

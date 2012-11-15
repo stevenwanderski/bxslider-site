@@ -8,19 +8,11 @@
 
 <div class="slider"><%= @example['html'] %></div>
 
-<div class="code-switch">
-  <a href="" data-code="js" class="js active">JS</a>
-  <a href="" data-code="html" class="html">HTML</a>
-</div>
+<h4>JS:</h4>
+<pre><code data-language="javascript"><%= @example['js'].strip %></code></pre>
 
-<div class="code-wrap" data-showing="js">
-  <div data-code="js" class="code code-js active">
-    <pre><code data-language="javascript"><%= @example['js'].strip %></code></pre>
-  </div>
-  <div data-code="html" class="code code-html">
-    <pre><code data-language="html"><%= h @example['html'].strip %></code></pre>
-  </div>
-</div>
+<h4>HTML:</h4>
+<pre><code data-language="html"><%= h @example['html'].strip %></code></pre>
 
 <% if @example['note'] %>
   <p class="note"><%= @example['note'] %></p>
