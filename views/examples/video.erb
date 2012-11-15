@@ -1,0 +1,38 @@
+<%
+@example = Hash.new
+
+@example['title'] = 'Responsive video'
+
+@example['js'] = "
+$('.bxslider').bxSlider({
+  video: true
+});"
+
+@example['html'] = '
+
+<!-- <script src="/js/plugins/jquery.fitvids.js"></script> must be included in the <head>
+after the jQuery library, and before the jquery.bxslider.js file. See the source code
+of this page for an example. -->
+
+<ul class="bxslider">
+  <li>
+    <iframe src="http://player.vimeo.com/video/51686357" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  </li>
+  <li><img src="/images/730_200/houses.jpg" /></li>
+</ul>'
+
+head = h '<head>
+  <!-- other stuff here -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="/js/plugins/jquery.fitvids.js"></script>
+  <script src="/js/jquery.bxslider.js"></script>
+</head>'
+
+@example['note'] = "The file jquery.fitvids.js (found in the plugins folder) must be called AFTER the jQuery library, and BEFORE the jquery.bxslider.js file. An example <code>&lt;head&gt;</code> could look like the following:
+<pre><code data-language=\"html\">#{head}</code></pre>"
+
+@video = true;
+
+%>
+
+<%= erb(:"partials/example_item", :layout => false, :locals => { :example => @example }) %>

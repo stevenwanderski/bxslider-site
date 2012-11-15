@@ -1,0 +1,28 @@
+<%
+@example = Hash.new
+
+@example['title'] = 'Callback API'
+
+@example['js'] = "
+$('.bxslider').bxSlider({
+  onSliderLoad: function(){
+    // do funky JS stuff here
+    alert('Slider has finished loading. Click OK to continue!');
+  },
+  onSlideAfter: function(){
+    // do mind-blowing JS stuff here
+    alert('A slide has finished transitioning. Bravo. Click OK to continue!');
+  }
+});"
+
+@example['html'] = '
+<ul class="bxslider">
+  <li><img src="/images/730_200/tree_root.jpg" /></li>
+  <li><img src="/images/730_200/hill_fence.jpg" /></li>
+  <li><img src="/images/730_200/houses.jpg" /></li>
+</ul>'
+
+@example['note'] = 'Perform a slide transition to view the "onSlideAfter" callback.'
+%>
+
+<%= erb(:"partials/example_item", :layout => false, :locals => { :example => @example }) %>

@@ -1,0 +1,54 @@
+<%
+@example = Hash.new
+
+@example['title'] = 'Thumbnail pager - method 2'
+
+@example['js'] = "
+$('.bxslider').bxSlider({
+  buildPager: function(slideIndex){
+    switch(slideIndex){
+      case 0:
+        return '<img src=\"/images/thumbs/tree_root.jpg\" />';
+      case 1:
+        return '<img src=\"/images/thumbs/houses.jpg\" />';
+      case 2:
+        return '<img src=\"/images/thumbs/hill_fence.jpg\" />';
+    }
+  }
+});"
+
+@example['html'] = '
+
+<style type="text/css">
+  .bx-wrapper .bx-pager {
+    bottom: -95px;
+  }
+  
+  .bx-wrapper .bx-pager a {
+    border: solid #ccc 1px;
+    display: block;
+    margin: 0 5px;
+    padding: 3px;
+  }
+  
+  .bx-wrapper .bx-pager a:hover,
+  .bx-wrapper .bx-pager a.active {
+    border: solid #5280DD 1px;
+  }
+  
+  .bx-wrapper {
+    margin-bottom: 120px;
+  }
+</style>
+
+<ul class="bxslider">
+  <li><img src="/images/730_200/tree_root.jpg" /></li>
+  <li><img src="/images/730_200/houses.jpg" /></li>
+  <li><img src="/images/730_200/hill_fence.jpg" /></li>
+</ul>'
+
+@example['note'] = 'Note that if the supplied theme is being used, some CSS must be tweaked (see the HTML code above). CSS should always be implemented in an external CSS stylesheet, not the body of your document.'
+
+%>
+
+<%= erb(:"partials/example_item", :layout => false, :locals => { :example => @example }) %>

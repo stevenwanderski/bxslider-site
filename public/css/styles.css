@@ -288,6 +288,7 @@ aside {
 	font-size: 1.5em;
 	font-weight: bold;
 	margin: 6px 0 80px;
+	font-family: "KievitWeb", "Arial";
 }
 
 /** EXAMPLES
@@ -351,6 +352,29 @@ aside {
 
 .example-item ol li {
 	font-size: .875em;
+}
+
+.example-item .slider a {
+	line-height: 1.5em;
+}
+
+.example-item #bx-pager {
+	text-align: center;
+	margin-top: -30px;
+}
+
+.example-item #bx-pager a {
+	margin: 0 3px;
+}
+
+.example-item #bx-pager a img {
+	padding: 3px;
+	border: solid #ccc 1px;
+}
+
+.example-item #bx-pager a:hover img,
+.example-item #bx-pager a.active img {
+	border: solid #5280DD 1px;
 }
 
 /** OPTIONS

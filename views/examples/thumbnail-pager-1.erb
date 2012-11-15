@@ -1,0 +1,28 @@
+<%
+@example = Hash.new
+
+@example['title'] = 'Thumbnail pager - method 1'
+
+@example['js'] = "
+$('.bxslider').bxSlider({
+  pagerCustom: '#bx-pager'
+});"
+
+@example['html'] = '
+<ul class="bxslider">
+  <li><img src="/images/730_200/tree_root.jpg" /></li>
+  <li><img src="/images/730_200/houses.jpg" /></li>
+  <li><img src="/images/730_200/hill_fence.jpg" /></li>
+</ul>
+
+<div id="bx-pager">
+  <a data-slide-index="0" href=""><img src="/images/thumbs/tree_root.jpg" /></a>
+  <a data-slide-index="1" href=""><img src="/images/thumbs/houses.jpg" /></a>
+  <a data-slide-index="2" href=""><img src="/images/thumbs/hill_fence.jpg" /></a>
+</div>'
+
+@example['note'] = 'Note that the parent element (#bx-pager in this example), must contain an <code>&lt;a&gt;</code> tag for each slide. Each <code>&lt;a&gt;</code> tag must have a data-slide-index attribute that references the respecitve slide index (zero-based). See the HTML in this example. Also note that this method should not be used for dynamic carousels. See <a href="/examples/thumbnail-pager-2">here</a> for a method to be used with dynamic carousels.'
+
+%>
+
+<%= erb(:"partials/example_item", :layout => false, :locals => { :example => @example }) %>
