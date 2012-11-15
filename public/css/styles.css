@@ -67,6 +67,7 @@
 
 @font-face {
 	font-family: 'KievitWeb';
+	src: url('fonts/KievitWeb.eot');
 	src: url('fonts/KievitWeb.eot?#iefix') format('embedded-opentype'), 
 			 url('fonts/KievitWeb.woff') format('woff'),
 			 url('fonts/kievitcomp-bold-webfont.svg#KievitComp-BoldRegular') format('svg');
@@ -75,6 +76,7 @@
 
 @font-face {
 	font-family: 'KievitWeb';
+	src: url('fonts/KievitWeb-Bold.eot');
 	src: url('fonts/KievitWeb-Bold.eot?#iefix') format('embedded-opentype'), 
 			 url('fonts/KievitWeb-Bold.woff') format('woff'),
 			 url('fonts/kievitcomp-bold-webfont.svg#KievitComp-BoldRegular') format('svg');
