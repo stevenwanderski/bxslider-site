@@ -1,14 +1,8 @@
 $(function(){
 	
-	$('.btn').click(function() {
-		return false;
-	});
-	
 	$('.home .bxslider').bxSlider({
-		adaptiveHeight: false,
 		auto: true,
-		mode: 'fade',
-		pause: 4000
+		mode: 'fade'
 	});
 	
 	/**
