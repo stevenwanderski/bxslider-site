@@ -531,8 +531,24 @@ aside .block-advert {
 	padding-top: 0;
 }
 
+aside .block-advert .bsa_it_ad {
+	margin-bottom: 5px;
+}
+
+aside .block-advert .one .bsa_it_ad .bsa_it_i {
+	margin-right: 25px;
+}
+
+aside .block-advert .yoggrt-link {
+	font-size: .875em;
+}
+
 aside .block-buttons {
 	padding-bottom: 35px;
+}
+
+aside .block-buttons form {
+	display: none;
 }
 
 aside .btn {
