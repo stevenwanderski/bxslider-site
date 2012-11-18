@@ -6,6 +6,10 @@ require 'sinatra'
 # ROUTES
 # ===================================
 
+get '/sites/default/files/jquery.bxSlider.min.js' do
+  redirect "http://70.32.85.114/sites/default/files/jquery.bxSlider.min.js"
+end
+
 get '/' do
   @title = 'jQuery Content Slider'
   @class = 'home'
