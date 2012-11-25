@@ -227,27 +227,27 @@
   'Callbacks' => {
     'onSliderLoad' => {
       'desc' => "Executes immediately after the slider is fully loaded",
-      'default' => "null",
+      'default' => "function(){}",
       'options' => "function()"
     },
     'onSlideBefore' => {
       'desc' => "Executes immediately before each slide transition. Function argument is the target (next) slide element.",
-      'default' => "null",
+      'default' => "function(){}",
       'options' => "function($slideElement)"
     },
     'onSlideAfter' => {
       'desc' => "Executes immediately after each slide transition. Function argument is the current slide element (when transition completes).",
-      'default' => "null",
+      'default' => "function(){}",
       'options' => "function($slideElement)"
     },
     'onSlideNext' => {
       'desc' => "Executes immediately before each \"Next\" slide transition. Function argument is the target (next) slide element.",
-      'default' => "null",
+      'default' => "function(){}",
       'options' => "function($slideElement)"
     },
     'onSlidePrev' => {
       'desc' => "Executes immediately before each \"Prev\" slide transition. Function argument is the target (prev) slide element.",
-      'default' => "null",
+      'default' => "function(){}",
       'options' => "function($slideElement)"
     }
   },
