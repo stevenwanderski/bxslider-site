@@ -6,6 +6,7 @@
 @example['js'] = "
 $('.bxslider').bxSlider({
   mode: 'horizontal',
+  useCSS: false,
   infiniteLoop: false,
   hideControlOnEnd: true,
   easing: 'easeOutElastic',
@@ -35,7 +36,7 @@ head = h '<head>
   <script src="/js/jquery.bxslider.js"></script>
 </head>'
 
-@example['note'] = "The file jquery.fitvids.js (found in the plugins folder) must be called AFTER the jQuery library, and BEFORE the jquery.bxslider.js file. An example <code>&lt;head&gt;</code> could look like the following:
+@example['note'] = "Note that in order to use the special easing functions provided by the jquery.easing plugin, 'useCSS' must be set to false (<code>useCSS: false</code>). The file jquery.easing.1.3.js (found in the plugins folder) must be called AFTER the jQuery library, and BEFORE the jquery.bxslider.js file. An example <code>&lt;head&gt;</code> could look like the following:
 <pre><code data-language=\"html\">#{head}</code></pre>"
 
 @easing = true;

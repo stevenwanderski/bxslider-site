@@ -41,9 +41,9 @@
       'options' => "boolean (true / false)"
     },
     'easing' => {
-      'desc' => "The type of \"easing\" to use during transitions. Include <code>plugins/jquery.easing.1.3.js</code> for many options.<br />See <a href=\"http://gsgd.co.uk/sandbox/jquery/easing/\" target=\"_blank\">http://gsgd.co.uk/sandbox/jquery/easing/</a> for more info",
-      'default' => "'swing'",
-      'options' => "'swing', 'linear' (see the above file for more options)"
+      'desc' => "The type of \"easing\" to use during transitions. If using CSS transitions, include a value for the <code>transition-timing-function</code> property. If not using CSS transitions, you may include <code>plugins/jquery.easing.1.3.js</code> for many options.<br />See <a href=\"http://gsgd.co.uk/sandbox/jquery/easing/\" target=\"_blank\">http://gsgd.co.uk/sandbox/jquery/easing/</a> for more info.",
+      'default' => "null",
+      'options' => "if using CSS: 'linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out', 'cubic-bezier(n,n,n,n)'. If not using CSS: 'swing', 'linear' (see the above file for more options)"
     },
     'captions' => {
       'desc' => "Include image captions. Captions are derived from the image's <code>title</code> attribute",
@@ -56,7 +56,7 @@
       'options' => "boolean (true / false)"
     },
     'tickerHover' => {
-      'desc' => "Ticker will pause when mouse hovers over slider",
+      'desc' => "Ticker will pause when mouse hovers over slider. Note: this functionality does NOT work if using CSS transitions!",
       'default' => "false",
       'options' => "boolean (true / false)"
     },
@@ -84,7 +84,12 @@
       'desc' => "If any slides contain video, set this to <code>true</code>. Also, include <code>plugins/jquery.fitvids.js</code><br />See <a href=\"http://fitvidsjs.com/\" target=\"_blank\">http://fitvidsjs.com/</a> for more info",
       'default' => "false",
       'options' => "boolean (true / false)"
-    }
+    },
+    'useCSS' => {
+      'desc' => "If true, CSS transitions will be used for horizontal and vertical slide animations (this uses native hardware acceleration). If false, jQuery animate() will be used.",
+      'default' => "true",
+      'options' => "boolean (true / false)"
+    },
   },
   'Pager' => {
     'pager' => {
