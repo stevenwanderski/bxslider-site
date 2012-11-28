@@ -233,27 +233,50 @@
     'onSliderLoad' => {
       'desc' => "Executes immediately after the slider is fully loaded",
       'default' => "function(){}",
-      'options' => "function(){ // your code here }"
+      'options' => "function(currentIndex){ // your code here }",
+      'arguments' => {
+        'currentIndex' => 'element index of the current slide',
+      }
     },
     'onSlideBefore' => {
-      'desc' => "Executes immediately before each slide transition. Function argument is the target (next) slide element.",
+      'desc' => "Executes immediately before each slide transition.",
       'default' => "function(){}",
-      'options' => "function($slideElement){ // your code here }"
+      'options' => "function($slideElement, oldIndex, newIndex){ // your code here }",
+      'arguments' => {
+        '$slideElement' => 'jQuery element of the destination element',
+        'oldIndex' => 'element index of the previous slide (before the transition)',
+        'newIndex' => 'element index of the destination slide (after the transition)'
+      }
     },
     'onSlideAfter' => {
       'desc' => "Executes immediately after each slide transition. Function argument is the current slide element (when transition completes).",
       'default' => "function(){}",
-      'options' => "function($slideElement){ // your code here }"
+      'options' => "function($slideElement, oldIndex, newIndex){ // your code here }",
+      'arguments' => {
+        '$slideElement' => 'jQuery element of the destination element',
+        'oldIndex' => 'element index of the previous slide (before the transition)',
+        'newIndex' => 'element index of the destination slide (after the transition)'
+      }
     },
     'onSlideNext' => {
       'desc' => "Executes immediately before each \"Next\" slide transition. Function argument is the target (next) slide element.",
       'default' => "function(){}",
-      'options' => "function($slideElement){ // your code here }"
+      'options' => "function($slideElement, oldIndex, newIndex){ // your code here }",
+      'arguments' => {
+        '$slideElement' => 'jQuery element of the destination element',
+        'oldIndex' => 'element index of the previous slide (before the transition)',
+        'newIndex' => 'element index of the destination slide (after the transition)'
+      }
     },
     'onSlidePrev' => {
       'desc' => "Executes immediately before each \"Prev\" slide transition. Function argument is the target (prev) slide element.",
       'default' => "function(){}",
-      'options' => "function($slideElement){ // your code here }"
+      'options' => "function($slideElement, oldIndex, newIndex){ // your code here }",
+      'arguments' => {
+        '$slideElement' => 'jQuery element of the destination element',
+        'oldIndex' => 'element index of the previous slide (before the transition)',
+        'newIndex' => 'element index of the destination slide (after the transition)'
+      }
     }
   },
   'Public methods' => {
@@ -326,7 +349,12 @@ var slideQty = slider.getSlideCount();"
       <div class="option-desc"><%= option_vals['desc'] %></div>
       <% if option_vals['default'] %>
       <pre><code data-language="javascript">default: <%= option_vals['default'] %>
-options: <%= option_vals['options'] %></code></pre>
+options: <%= option_vals['options'] %>
+<% if option_vals['arguments'] %>arguments:
+<% option_vals['arguments'].each do |arg, arg_value| %>
+  <%= arg %>: <%= arg_value %>
+<% end %><% end %></code></pre>
+      
       <% elsif option_vals['example'] %>
       <pre><code data-language="javascript">example:
 <%= option_vals['example'] %></code></pre>
