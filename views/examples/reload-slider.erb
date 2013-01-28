@@ -1,0 +1,31 @@
+<%
+@example = Hash.new
+
+@example['title'] = 'Reload slider'
+
+@example['js'] = "
+var slider = $('.bxslider').bxSlider({
+  mode: 'horizontal'
+});
+
+$('#reload-slider').click(function(e){
+  e.preventDefault();
+  $('.bxslider').append('<li><img src=\"/images/730_200/trees.jpg\" /></li>');
+  slider.reloadSlider();
+});"
+
+@example['html'] = '
+<ul class="bxslider">
+  <li><img src="/images/730_200/tree_root.jpg" title="Funky roots" /></li>
+  <li><img src="/images/730_200/hill_road.jpg" title="The long and winding road" /></li>
+</ul>
+
+<p><a href="" id="reload-slider">Click to add a slide, then reload the slider</a></p>
+'
+
+@example['note'] = '
+Bonus! A settings object may be passed to the <code>reloadSlider()</code> call (just as when initializing an original slider) and these new settings will be applied with the reload. <a href="/examples/reload-slider-settings">Check the example here.</a>
+'
+%>
+
+<%= erb(:"partials/example_item", :layout => false, :locals => { :example => @example }) %>

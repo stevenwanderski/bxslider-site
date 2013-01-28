@@ -319,6 +319,16 @@ var current = slider.getCurrentSlide();"
       'desc' => "Returns the total number of slides in the slider",
       'example' => "slider = $('.bxslider').bxSlider();
 var slideQty = slider.getSlideCount();"
+    },
+    'reloadSlider' => {
+      'desc' => "Reload the slider. Useful when adding slides on the fly. Accepts an optional settings object. <a href=\"/examples/reload-slider-settings\">See here for an example.</a>",
+      'example' => "slider = $('.bxslider').bxSlider();
+slider.reloadSlider();"
+    },
+    'destroySlider' => {
+      'desc' => "Destroy the slider. This reverts all slider elements back to their original state (before calling the slider).",
+      'example' => "slider = $('.bxslider').bxSlider();
+slider.destroySlider();"
     }
   }
 }

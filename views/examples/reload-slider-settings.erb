@@ -1,0 +1,32 @@
+<%
+@example = Hash.new
+
+@example['title'] = 'Reload slider with new settings'
+
+@example['js'] = "
+var slider = $('.bxslider').bxSlider({
+  mode: 'horizontal'
+});
+
+$('#reload-slider').click(function(e){
+  e.preventDefault();
+  slider.reloadSlider({
+    mode: 'fade',
+    auto: true,
+    pause: 1000,
+    speed: 500
+  });
+});"
+
+@example['html'] = '
+<ul class="bxslider">
+  <li><img src="/images/730_200/tree_root.jpg" /></li>
+  <li><img src="/images/730_200/hill_road.jpg" /></li>
+</ul>
+
+<p><a href="" id="reload-slider">Click to reload slider with new settings</a></p>
+'
+
+%>
+
+<%= erb(:"partials/example_item", :layout => false, :locals => { :example => @example }) %>
