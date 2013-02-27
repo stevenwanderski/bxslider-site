@@ -75,6 +75,16 @@
       'default' => "500",
       'options' => "integer"
     },
+    'video' => {
+      'desc' => "If any slides contain video, set this to <code>true</code>. Also, include <code>plugins/jquery.fitvids.js</code><br />See <a href=\"http://fitvidsjs.com/\" target=\"_blank\">http://fitvidsjs.com/</a> for more info",
+      'default' => "false",
+      'options' => "boolean (true / false)"
+    },
+    'useCSS' => {
+      'desc' => "If true, CSS transitions will be used for horizontal and vertical slide animations (this uses native hardware acceleration). If false, jQuery animate() will be used.",
+      'default' => "true",
+      'options' => "boolean (true / false)"
+    },
     'touchEnabled' => {
       'desc' => "If <code>true</code>, slider will allow touch swipe transitions",
       'default' => "true",
@@ -85,14 +95,19 @@
       'default' => "50",
       'options' => "integer"
     },
-    'video' => {
-      'desc' => "If any slides contain video, set this to <code>true</code>. Also, include <code>plugins/jquery.fitvids.js</code><br />See <a href=\"http://fitvidsjs.com/\" target=\"_blank\">http://fitvidsjs.com/</a> for more info",
-      'default' => "false",
+    'oneToOneTouch' => {
+      'desc' => "If <code>true</code>, non-fade slides follow the finger as it swipes",
+      'default' => "true",
       'options' => "boolean (true / false)"
     },
-    'useCSS' => {
-      'desc' => "If true, CSS transitions will be used for horizontal and vertical slide animations (this uses native hardware acceleration). If false, jQuery animate() will be used.",
+    'preventDefaultSwipeX' => {
+      'desc' => "If <code>true</code>, touch screen will not move along the x-axis as the finger swipes",
       'default' => "true",
+      'options' => "boolean (true / false)"
+    },
+    'preventDefaultSwipeY' => {
+      'desc' => "If <code>true</code>, touch screen will not move along the y-axis as the finger swipes",
+      'default' => "false",
       'options' => "boolean (true / false)"
     },
   },
