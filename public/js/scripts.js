@@ -2,7 +2,8 @@ $(function(){
 	
 	$('.home .bxslider').bxSlider({
 		auto: true,
-		mode: 'fade'
+		mode: 'fade',
+		preloadImages: 'visible'
 	});
 	
 	/**
