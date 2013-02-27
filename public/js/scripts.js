@@ -21,6 +21,7 @@ $(function(){
 	
 		// scroll to the elements
 		$('.reference-content a').click(function(){
+			$('.reference-content').slideToggle(300);
 			var id = $(this).html();
 			$('html, body').animate({
 				scrollTop: $('#' + id).offset().top - 20
