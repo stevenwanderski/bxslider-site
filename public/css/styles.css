@@ -195,6 +195,19 @@ pre {
 	overflow: auto;
 }
 
+ol li {
+	list-style: decimal;
+	margin: 0 0 5px 50px;
+	line-height: 1.35em;
+	color: #555;
+}
+
+hr {
+	border: 0;
+	border-top: solid #ddd 1px;
+	margin: 40px 0;
+}
+
 /** LAYOUT
 ================================================**/
 
@@ -382,6 +395,19 @@ aside {
 .example-item #bx-pager a.active img {
 	border: solid #5280DD 1px;
 }
+
+/** CAROUSEL DEMYSTIFIED
+================================================**/
+
+.carousel-extended aside { display: none; }
+
+.carousel-extended #primary { margin: 0;}
+
+.carousel-extended h2 {
+	font-size: 1.75em;
+	margin-bottom: 30px;
+}
+
 
 /** OPTIONS
 ================================================**/
