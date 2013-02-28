@@ -42,7 +42,14 @@
 
 <body class="<%= @class %>">
 	
-	<header><div class="inner clearfix"><%= erb(:"partials/header", :layout => false) %></div></header>
+	<header>
+		<div id="news-flash">
+			<div class="inner">
+				<h5>Version 4.1 released! <a href="/examples/carousel-demystified">Check out the new carousel features...</a></h5>
+			</div>
+		</div>
+		<div class="inner clearfix"><%= erb(:"partials/header", :layout => false) %></div>
+	</header>
 	
 	<section id="main">
 		<div class="inner clearfix">

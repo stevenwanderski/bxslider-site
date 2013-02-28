@@ -159,7 +159,7 @@ strong {
 	font-weight: bold;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
 	font-family: "KievitWeb", "Arial";
 	font-weight: bold;
 }
@@ -763,6 +763,31 @@ header .btn:active {
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
 	box-shadow: none;
+}
+
+/** NEWS FLASH
+================================================**/
+
+#news-flash {
+	background: #414141;
+}
+
+#news-flash .inner {
+	
+	color: #fff;
+}
+
+#news-flash h5 {
+	background: url('/images/icons/icon_alert.png') left center no-repeat;
+	padding: 14px 0 14px 34px;
+	margin-left: 5px;
+	font-weight: 300;
+}
+
+#news-flash a {
+	color: #fff;
+	padding-left: 10px;
+	text-decoration: underline;
 }
 
 /** FOOTER
