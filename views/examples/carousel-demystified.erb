@@ -1,12 +1,26 @@
-<% @class = 'example-item carousel-extended' %>
+<% @class = 'example-item carousel-demystified' %>
 
 <h1>Carousels De-mystified</h1>
 
-<p>Ever since releasing v4.0, which introduced responsive behavior, the carousel mode (displaying / moving multiple slides) has been the most misunderstood, troublesome aspect of the slider. The settings needed a secret knowledge of the underlying codebase, and did not allow intuitive configuration. Plainly put - the carousel was poopy.</p>
+<p>Ever since releasing v4.0, which introduced responsive behavior, the carousel mode (displaying / moving multiple slides) has been the most misunderstood, troublesome aspect of the slider. Proper use of the settings required a secret knowledge of the underlying codebase, and did not allow for intuitive configuration. Plainly put - the carousel config was poopy.</p>
 
 <p>No longer! In version 4.1 the carousel functionality and settings have been re-worked to function in a straight forward, intuitive manner. Below is a detailed explanation of the new settings, with lots of examples. Let's do this thing.</p>
 
-<h2>Example #1: Standard responsive carousel</h2>
+<h3>Quick glance</h3>
+<p>
+  <ol>
+    <li><a href="#example1">Example #1: Standard responsive carousel</a></li>
+    <li><a href="#example2">Example #2: Locked number of slides</a></li>
+    <li><a href="#example3">Example #3: Too large slideWidth</a></li>
+    <li><a href="#example4">Example #4: Move number of slides (moveSlides)</a></li>
+    <li><a href="#example5">Example #5: Infinite carousel with odd number of slides</a></li>
+    <li><a href="#example6">Example #6: Start on a different slide</a></li>
+    <li><a href="#example7">Example #7: Not enough slides</a></li>
+    <li><a href="#example8">Example #8: Vertical carousel</a></li>
+  </ol>
+</p>
+
+<h2 id="example1">Example #1: Standard responsive carousel</h2>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -69,11 +83,11 @@ $(document).ready(function(){
 
 <p>Go ahead and resize your browser from very large, to very small. You will see that 3 slides are displayed when there is room (maxSlides) and 2 slides are displayed when room becomes tight (minSlides).</p>
 
-<p>Let's disect each of the settings:</p>
+<p>Let's disect each of the settings.</p>
 
 <h3>slideWidth</h3>
 
-<p>When telling a horizontal slider to display more than one slide, we need to supply a width for which the slides should use. If no slideWidth is supplied, the slider will expand each slide to 100% width of the container. Therefore: <strong>use this setting as the maximum width for each slide.</strong> When space allows, slides will be set to this width, and never grow beyond it.</p>
+<p>When telling a horizontal slider to display more than one slide, we need to supply a width for which the slides should use. If no slideWidth is supplied, the slider will expand each slide to 100% width of the container. Therefore: <strong>use this setting as the maximum width for each slide.</strong> When space allows, slides will be set to this width, and will never grow beyond it.</p>
 
 <p>Another new feature regarding slideWidth, is that the slider container will now be assigned a max-width which will never be larger than the maximum number of visible slides. So, if we have a slider with the following settings: slideWidth: 100, minSlides: 2, maxSlides: 3, the slider container will recieve a max-width of "300px" (slideWidth * maxSlides). Another example: slideWidth: 200, minSlides: 1, maxSlides: 5, slider container will receive a max-width of "1000px" (slideWidth * maxSlides).</p>
 
@@ -104,7 +118,7 @@ $(document).ready(function(){
 
 <hr />
 
-<h2>Example #2: Locked number of slides</h2>
+<h2 id="example2">Example #2: Locked number of slides</h2>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -161,7 +175,7 @@ $(document).ready(function(){
 
 <hr />
 
-<h2>Example #3: Too large slideWidth</h2>
+<h2 id="example3">Example #3: Too large slideWidth</h2>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -218,7 +232,7 @@ $(document).ready(function(){
 
 <hr />
 
-<h2>Example #4: Move number of slides (moveSlides)</h2>
+<h2 id="example4">Example #4: Move number of slides (moveSlides)</h2>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -277,7 +291,7 @@ $(document).ready(function(){
 
 <hr />
 
-<h2>Example #5: Infinite carousel with odd number of slides</h2>
+<h2 id="example5">Example #5: Infinite carousel with odd number of slides</h2>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -336,7 +350,7 @@ $(document).ready(function(){
 
 <hr />
 
-<h2>Example #6: Start on a different slide</h2>
+<h2 id="example6">Example #6: Start on a different slide</h2>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -393,4 +407,100 @@ $(document).ready(function(){
 
 <p>This is a tricky one :) Here we specify a startSlide value of 2. This can be a little misleading as this does not refer to <em>slide</em> #2, but it refers to <em>pager</em> #2. Since slides and pagers are zero-based, we are telling the carousel to start on the thrid pager (remember that 2 in a zero-based world is the third element). Similar to the moveSlides explanation above, this occurs so that the carousel can stay in sync with the pager and prevents the markup from becoming unweildy.</p>
 
+<hr />
 
+<h2 id="example7">Example #7: Not enough slides</h2>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.slider7').bxSlider({
+    slideWidth: 200,
+    minSlides: 4,
+    maxSlides: 5,
+    slideMargin: 10
+  });
+});
+</script>
+
+<div class="slider7">
+  <div class="slide"><img src="http://placehold.it/200x150&text=FooBar1"></div>
+  <div class="slide"><img src="http://placehold.it/200x150&text=FooBar2"></div>
+</div>
+
+<h4>JS:</h4>
+<pre><code data-language="javascript">$(document).ready(function(){
+  $('.slider7').bxSlider({
+    slideWidth: 200,
+    minSlides: 4,
+    maxSlides: 5,
+    slideMargin: 10
+  });
+});
+</code></pre>
+
+<h4>HTML:</h4>
+<pre><code data-language="html"><%= h('
+<div class="slider7">
+  <div class="slide"><img src="http://placehold.it/200x150&text=FooBar1"></div>
+  <div class="slide"><img src="http://placehold.it/200x150&text=FooBar2"></div>
+</div>
+').strip %></code></pre>
+
+<p>Here we have intentionally not provided enough slides to fill our requirements. In this case, the carousel will simply use the number of existing slides as the minSlide value, and continue as usual.</p>
+
+<hr />
+
+<h2 id="example8">Example #8: Vertical carousel</h2>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.slider8').bxSlider({
+    mode: 'vertical',
+    slideWidth: 300,
+    minSlides: 2,
+    slideMargin: 10
+  });
+});
+</script>
+
+<div class="slider8">
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar1"></div>
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar2"></div>
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar3"></div>
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar4"></div>
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar5"></div>
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar6"></div>
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar7"></div>
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar8"></div>
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar9"></div>
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar10"></div>
+</div>
+
+<h4>JS:</h4>
+<pre><code data-language="javascript">$(document).ready(function(){
+  $('.slider8').bxSlider({
+    mode: 'vertical',
+    slideWidth: 300,
+    minSlides: 2,
+    slideMargin: 10
+  });
+});
+</code></pre>
+
+<h4>HTML:</h4>
+<pre><code data-language="html"><%= h('
+<div class="slider8">
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar1"></div>
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar2"></div>
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar3"></div>
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar4"></div>
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar5"></div>
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar6"></div>
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar7"></div>
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar8"></div>
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar9"></div>
+  <div class="slide"><img src="http://placehold.it/300x100&text=FooBar10"></div>
+</div>
+').strip %></code></pre>
+
+<p>Vertical carousels follow most of the same rules as horizontal carousels. However, the maxSlides setting is not used as vertical carousels will always have only one slide across. Therefore, we do not have to accomodate different screen widths with this setting.</p>

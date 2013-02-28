@@ -195,13 +195,6 @@ pre {
 	overflow: auto;
 }
 
-ol li {
-	list-style: decimal;
-	margin: 0 0 5px 50px;
-	line-height: 1.35em;
-	color: #555;
-}
-
 hr {
 	border: 0;
 	border-top: solid #ddd 1px;
@@ -399,15 +392,20 @@ aside {
 /** CAROUSEL DEMYSTIFIED
 ================================================**/
 
-.carousel-extended aside { display: none; }
+.carousel-demystified aside { display: none; }
+.carousel-demystified #primary { margin: 0;}
 
-.carousel-extended #primary { margin: 0;}
-
-.carousel-extended h2 {
+.carousel-demystified h2 {
 	font-size: 1.75em;
 	margin-bottom: 30px;
 }
 
+.carousel-demystified ol li {
+	list-style: decimal;
+	margin: 0 0 5px 50px;
+	line-height: 1.35em;
+	color: #555;
+}
 
 /** OPTIONS
 ================================================**/
