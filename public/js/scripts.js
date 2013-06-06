@@ -2,18 +2,7 @@ $(function(){
 	
 	$('.home .bxslider').bxSlider({
 		auto: true,
-		mode: 'fade',
-		preloadImages: 'visible'
-	});
-
-	$('#news-flash-link').click(function(e){
-		// check if cookie exists
-		var cookie = getCookie('bxslider_news_4_1');
-		if(!cookie){
-			createCookie('bxslider_news_4_1', true, 999);
-			window.location.href = $(this).attr('href');
-		}
-		e.preventDefault();
+		mode: 'fade'
 	});
 	
 	/**

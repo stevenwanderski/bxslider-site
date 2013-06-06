@@ -43,13 +43,6 @@
 <body class="<%= @class %>">
 	
 	<header>
-		<% if !request.cookies["bxslider_news_4_1"] %>
-		<div id="news-flash">
-			<div class="inner">
-				<h5>Version 4.1 released! <a href="/examples/carousel-demystified" id="news-flash-link">Check out the new carousel features...</a></h5>
-			</div>
-		</div>
-		<% end %>
 		<div class="inner clearfix"><%= erb(:"partials/header", :layout => false) %></div>
 	</header>
 	

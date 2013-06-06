@@ -75,7 +75,8 @@
 		adaptiveHeightSpeed: <span class="number">500</span>,
 		video: <span class="literal">false</span>,
 		useCSS: <span class="literal">true</span>,
-		preloadImages: <span class="string">'visible'</span>,</pre></div></div>
+		preloadImages: <span class="string">'visible'</span>,
+		responsive: <span class="literal">true</span>,</pre></div></div>
             
         </li>
         
@@ -574,6 +575,24 @@ used to setup and update carousel slides dimensions</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-31">&#182;</a>
               </div>
+              <p>save original style data</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			el.data(<span class="string">"origStyle"</span>, el.attr(<span class="string">"style"</span>));
+			el.children(slider.settings.slideSelector).each(<span class="keyword">function</span>() {
+			  $(<span class="keyword">this</span>).data(<span class="string">"origStyle"</span>, $(<span class="keyword">this</span>).attr(<span class="string">"style"</span>));
+			});</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-32">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-32">&#182;</a>
+              </div>
               <p>perform all DOM / CSS modifications</p>
 
             </div>
@@ -589,11 +608,11 @@ used to setup and update carousel slides dimensions</p>
         </li>
         
         
-        <li id="section-32">
+        <li id="section-33">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-32">&#182;</a>
+                <a class="pilcrow" href="#section-33">&#182;</a>
               </div>
               <p>wrap el in a wrapper</p>
 
@@ -604,11 +623,11 @@ used to setup and update carousel slides dimensions</p>
         </li>
         
         
-        <li id="section-33">
+        <li id="section-34">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-33">&#182;</a>
+                <a class="pilcrow" href="#section-34">&#182;</a>
               </div>
               <p>store a namspace reference to .bx-viewport</p>
 
@@ -619,11 +638,11 @@ used to setup and update carousel slides dimensions</p>
         </li>
         
         
-        <li id="section-34">
+        <li id="section-35">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-34">&#182;</a>
+                <a class="pilcrow" href="#section-35">&#182;</a>
               </div>
               <p>add a loading div to display while images are loading</p>
 
@@ -635,11 +654,11 @@ used to setup and update carousel slides dimensions</p>
         </li>
         
         
-        <li id="section-35">
+        <li id="section-36">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-35">&#182;</a>
+                <a class="pilcrow" href="#section-36">&#182;</a>
               </div>
               <p>set el to a massive width, to hold any needed slides
 also strip any margin and padding from el</p>
@@ -647,18 +666,18 @@ also strip any margin and padding from el</p>
             </div>
             
             <div class="content"><div class='highlight'><pre>			el.css({
-				width: slider.settings.mode == <span class="string">'horizontal'</span> ? slider.children.length * <span class="number">215</span> + <span class="string">'%'</span> : <span class="string">'auto'</span>,
+				width: slider.settings.mode == <span class="string">'horizontal'</span> ? (slider.children.length * <span class="number">100</span> + <span class="number">215</span>) + <span class="string">'%'</span> : <span class="string">'auto'</span>,
 				position: <span class="string">'relative'</span>
 			});</pre></div></div>
             
         </li>
         
         
-        <li id="section-36">
+        <li id="section-37">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-36">&#182;</a>
+                <a class="pilcrow" href="#section-37">&#182;</a>
               </div>
               <p>if using CSS, add the easing property</p>
 
@@ -670,11 +689,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-37">
+        <li id="section-38">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-37">&#182;</a>
+                <a class="pilcrow" href="#section-38">&#182;</a>
               </div>
               <p>if not using CSS and no easing value was supplied, use the default JS animation easing (swing)</p>
 
@@ -688,11 +707,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-38">
+        <li id="section-39">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-38">&#182;</a>
+                <a class="pilcrow" href="#section-39">&#182;</a>
               </div>
               <p>make modifications to the viewport (.bx-viewport)</p>
 
@@ -710,11 +729,30 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-39">
+        <li id="section-40">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-39">&#182;</a>
+                <a class="pilcrow" href="#section-40">&#182;</a>
+              </div>
+              <p>make modification to the wrapper (.bx-wrapper)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			<span class="keyword">if</span>(!slider.settings.pager) {
+				slider.viewport.parent().css({
+				margin: <span class="string">'0 auto 0px'</span>
+				});
+			}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-41">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-41">&#182;</a>
               </div>
               <p>apply css to all slider children</p>
 
@@ -729,26 +767,26 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-40">
+        <li id="section-42">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-40">&#182;</a>
+                <a class="pilcrow" href="#section-42">&#182;</a>
               </div>
               <p>apply the calculated width after the float is applied to prevent scrollbar interference</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>			slider.children.width(getSlideWidth());</pre></div></div>
+            <div class="content"><div class='highlight'><pre>			slider.children.css(<span class="string">'width'</span>, getSlideWidth());</pre></div></div>
             
         </li>
         
         
-        <li id="section-41">
+        <li id="section-43">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-41">&#182;</a>
+                <a class="pilcrow" href="#section-43">&#182;</a>
               </div>
               <p>if slideMargin is supplied, add the css</p>
 
@@ -760,11 +798,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-42">
+        <li id="section-44">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-42">&#182;</a>
+                <a class="pilcrow" href="#section-44">&#182;</a>
               </div>
               <p>if &quot;fade&quot; mode, add positioning and z-index CSS</p>
 
@@ -780,11 +818,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-43">
+        <li id="section-45">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-43">&#182;</a>
+                <a class="pilcrow" href="#section-45">&#182;</a>
               </div>
               <p>prepare the z-index on the showing element</p>
 
@@ -796,11 +834,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-44">
+        <li id="section-46">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-44">&#182;</a>
+                <a class="pilcrow" href="#section-46">&#182;</a>
               </div>
               <p>create an element to contain all slider controls (pager, start / stop, etc)</p>
 
@@ -811,11 +849,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-45">
+        <li id="section-47">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-45">&#182;</a>
+                <a class="pilcrow" href="#section-47">&#182;</a>
               </div>
               <p>if captions are requested, add them</p>
 
@@ -826,11 +864,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-46">
+        <li id="section-48">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-46">&#182;</a>
+                <a class="pilcrow" href="#section-48">&#182;</a>
               </div>
               <p>check if startSlide is last slide</p>
 
@@ -841,11 +879,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-47">
+        <li id="section-49">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-47">&#182;</a>
+                <a class="pilcrow" href="#section-49">&#182;</a>
               </div>
               <p>if video is true, set up the fitVids plugin</p>
 
@@ -856,11 +894,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-48">
+        <li id="section-50">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-48">&#182;</a>
+                <a class="pilcrow" href="#section-50">&#182;</a>
               </div>
               <p>set the default preload selector (visible)</p>
 
@@ -872,11 +910,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-49">
+        <li id="section-51">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-49">&#182;</a>
+                <a class="pilcrow" href="#section-51">&#182;</a>
               </div>
               <p>only check for control addition if not in &quot;ticker&quot; mode</p>
 
@@ -887,11 +925,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-50">
+        <li id="section-52">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-50">&#182;</a>
+                <a class="pilcrow" href="#section-52">&#182;</a>
               </div>
               <p>if pager is requested, add it</p>
 
@@ -902,11 +940,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-51">
+        <li id="section-53">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-51">&#182;</a>
+                <a class="pilcrow" href="#section-53">&#182;</a>
               </div>
               <p>if controls are requested, add them</p>
 
@@ -917,11 +955,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-52">
+        <li id="section-54">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-52">&#182;</a>
+                <a class="pilcrow" href="#section-54">&#182;</a>
               </div>
               <p>if auto is true, and auto controls are requested, add them</p>
 
@@ -932,11 +970,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-53">
+        <li id="section-55">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-53">&#182;</a>
+                <a class="pilcrow" href="#section-55">&#182;</a>
               </div>
               <p>if any control option is requested, add the controls wrapper</p>
 
@@ -947,11 +985,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-54">
+        <li id="section-56">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-54">&#182;</a>
+                <a class="pilcrow" href="#section-56">&#182;</a>
               </div>
               <p>if ticker mode, do not allow a pager</p>
 
@@ -964,11 +1002,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-55">
+        <li id="section-57">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-55">&#182;</a>
+                <a class="pilcrow" href="#section-57">&#182;</a>
               </div>
               <p>preload all images, then perform final DOM / CSS modifications that depend on images being loaded</p>
 
@@ -979,11 +1017,17 @@ also strip any margin and padding from el</p>
 
 		<span class="keyword">var</span> loadElements = <span class="keyword">function</span>(selector, callback){
 			<span class="keyword">var</span> total = selector.find(<span class="string">'img, iframe'</span>).length;
+			<span class="keyword">if</span> (total == <span class="number">0</span>){
+				callback();
+				<span class="keyword">return</span>;
+			}
 			<span class="keyword">var</span> count = <span class="number">0</span>;
 			selector.find(<span class="string">'img, iframe'</span>).each(<span class="keyword">function</span>(){
 				<span class="keyword">if</span>($(<span class="keyword">this</span>).is(<span class="string">'img'</span>)) $(<span class="keyword">this</span>).attr(<span class="string">'src'</span>, $(<span class="keyword">this</span>).attr(<span class="string">'src'</span>) + <span class="string">'?timestamp='</span> + <span class="keyword">new</span> Date().getTime());
 				$(<span class="keyword">this</span>).load(<span class="keyword">function</span>(){
-					<span class="keyword">if</span>(++count == total) callback();
+					setTimeout(<span class="keyword">function</span>(){
+						<span class="keyword">if</span>(++count == total) callback();
+					}, <span class="number">0</span>)
 				});
 			});
 		}
@@ -996,11 +1040,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-56">
+        <li id="section-58">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-56">&#182;</a>
+                <a class="pilcrow" href="#section-58">&#182;</a>
               </div>
               <p>if infinite loop, prepare additional slides</p>
 
@@ -1016,11 +1060,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-57">
+        <li id="section-59">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-57">&#182;</a>
+                <a class="pilcrow" href="#section-59">&#182;</a>
               </div>
               <p>remove the loading DOM element</p>
 
@@ -1031,11 +1075,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-58">
+        <li id="section-60">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-58">&#182;</a>
+                <a class="pilcrow" href="#section-60">&#182;</a>
               </div>
               <p>set the left / top position of &quot;el&quot;</p>
 
@@ -1046,11 +1090,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-59">
+        <li id="section-61">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-59">&#182;</a>
+                <a class="pilcrow" href="#section-61">&#182;</a>
               </div>
               <p>if &quot;vertical&quot; mode, always use adaptiveHeight to prevent odd behavior</p>
 
@@ -1061,11 +1105,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-60">
+        <li id="section-62">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-60">&#182;</a>
+                <a class="pilcrow" href="#section-62">&#182;</a>
               </div>
               <p>set the viewport height</p>
 
@@ -1076,11 +1120,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-61">
+        <li id="section-63">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-61">&#182;</a>
+                <a class="pilcrow" href="#section-63">&#182;</a>
               </div>
               <p>make sure everything is positioned just right (same as a window resize)</p>
 
@@ -1091,11 +1135,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-62">
+        <li id="section-64">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-62">&#182;</a>
+                <a class="pilcrow" href="#section-64">&#182;</a>
               </div>
               <p>onSliderLoad callback</p>
 
@@ -1106,11 +1150,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-63">
+        <li id="section-65">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-63">&#182;</a>
+                <a class="pilcrow" href="#section-65">&#182;</a>
               </div>
               <p>slider has been fully initialized</p>
 
@@ -1121,47 +1165,17 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-64">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-64">&#182;</a>
-              </div>
-              <p>bind the resize call to the window</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>			$(window).bind(<span class="string">'resize'</span>, resizeWindow);</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-65">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-65">&#182;</a>
-              </div>
-              <p>if auto is true, start the show</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>			<span class="keyword">if</span> (slider.settings.auto &amp;&amp; slider.settings.autoStart) initAuto();</pre></div></div>
-            
-        </li>
-        
-        
         <li id="section-66">
             <div class="annotation">
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-66">&#182;</a>
               </div>
-              <p>if ticker is true, start the ticker</p>
+              <p>bind the resize call to the window</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>			<span class="keyword">if</span> (slider.settings.ticker) initTicker();</pre></div></div>
+            <div class="content"><div class='highlight'><pre>			<span class="keyword">if</span> (slider.settings.responsive) $(window).bind(<span class="string">'resize'</span>, resizeWindow);</pre></div></div>
             
         </li>
         
@@ -1172,11 +1186,11 @@ also strip any margin and padding from el</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-67">&#182;</a>
               </div>
-              <p>if pager is requested, make the appropriate pager link active</p>
+              <p>if auto is true, start the show</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>			<span class="keyword">if</span> (slider.settings.pager) updatePagerActive(slider.settings.startSlide);</pre></div></div>
+            <div class="content"><div class='highlight'><pre>			<span class="keyword">if</span> (slider.settings.auto &amp;&amp; slider.settings.autoStart) initAuto();</pre></div></div>
             
         </li>
         
@@ -1187,11 +1201,11 @@ also strip any margin and padding from el</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-68">&#182;</a>
               </div>
-              <p>check for any updates to the controls (like hideControlOnEnd updates)</p>
+              <p>if ticker is true, start the ticker</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>			<span class="keyword">if</span> (slider.settings.controls) updateDirectionControls();</pre></div></div>
+            <div class="content"><div class='highlight'><pre>			<span class="keyword">if</span> (slider.settings.ticker) initTicker();</pre></div></div>
             
         </li>
         
@@ -1201,6 +1215,36 @@ also strip any margin and padding from el</p>
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-69">&#182;</a>
+              </div>
+              <p>if pager is requested, make the appropriate pager link active</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			<span class="keyword">if</span> (slider.settings.pager) updatePagerActive(slider.settings.startSlide);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-70">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-70">&#182;</a>
+              </div>
+              <p>check for any updates to the controls (like hideControlOnEnd updates)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			<span class="keyword">if</span> (slider.settings.controls) updateDirectionControls();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-71">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-71">&#182;</a>
               </div>
               <p>if touchEnabled is true, setup the touch events</p>
 
@@ -1218,11 +1262,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-70">
+        <li id="section-72">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-70">&#182;</a>
+                <a class="pilcrow" href="#section-72">&#182;</a>
               </div>
               <p>first determine which children (slides) should be used in our height calculation</p>
 
@@ -1233,11 +1277,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-71">
+        <li id="section-73">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-71">&#182;</a>
+                <a class="pilcrow" href="#section-73">&#182;</a>
               </div>
               <p>if mode is not &quot;vertical&quot; and adaptiveHeight is false, include all children</p>
 
@@ -1250,11 +1294,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-72">
+        <li id="section-74">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-72">&#182;</a>
+                <a class="pilcrow" href="#section-74">&#182;</a>
               </div>
               <p>if not carousel, return the single active child</p>
 
@@ -1266,11 +1310,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-73">
+        <li id="section-75">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-73">&#182;</a>
+                <a class="pilcrow" href="#section-75">&#182;</a>
               </div>
               <p>if carousel, return a slice of children</p>
 
@@ -1281,11 +1325,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-74">
+        <li id="section-76">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-74">&#182;</a>
+                <a class="pilcrow" href="#section-76">&#182;</a>
               </div>
               <p>get the individual slide index</p>
 
@@ -1296,11 +1340,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-75">
+        <li id="section-77">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-75">&#182;</a>
+                <a class="pilcrow" href="#section-77">&#182;</a>
               </div>
               <p>add the current slide to the children</p>
 
@@ -1311,11 +1355,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-76">
+        <li id="section-78">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-76">&#182;</a>
+                <a class="pilcrow" href="#section-78">&#182;</a>
               </div>
               <p>cycle through the remaining &quot;showing&quot; slides</p>
 
@@ -1326,11 +1370,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-77">
+        <li id="section-79">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-77">&#182;</a>
+                <a class="pilcrow" href="#section-79">&#182;</a>
               </div>
               <p>if looped back to the start</p>
 
@@ -1348,11 +1392,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-78">
+        <li id="section-80">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-78">&#182;</a>
+                <a class="pilcrow" href="#section-80">&#182;</a>
               </div>
               <p>if &quot;vertical&quot; mode, calculate the sum of the heights of the children</p>
 
@@ -1366,11 +1410,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-79">
+        <li id="section-81">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-79">&#182;</a>
+                <a class="pilcrow" href="#section-81">&#182;</a>
               </div>
               <p>add user-supplied margins</p>
 
@@ -1383,11 +1427,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-80">
+        <li id="section-82">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-80">&#182;</a>
+                <a class="pilcrow" href="#section-82">&#182;</a>
               </div>
               <p>if not &quot;vertical&quot; mode, calculate the max height of the children</p>
 
@@ -1424,11 +1468,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-81">
+        <li id="section-83">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-81">&#182;</a>
+                <a class="pilcrow" href="#section-83">&#182;</a>
               </div>
               <p>start with any user-supplied slide width</p>
 
@@ -1439,11 +1483,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-82">
+        <li id="section-84">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-82">&#182;</a>
+                <a class="pilcrow" href="#section-84">&#182;</a>
               </div>
               <p>get the current viewport width</p>
 
@@ -1454,11 +1498,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-83">
+        <li id="section-85">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-83">&#182;</a>
+                <a class="pilcrow" href="#section-85">&#182;</a>
               </div>
               <p>if slide width was not supplied, or is larger than the viewport use the viewport width</p>
 
@@ -1472,11 +1516,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-84">
+        <li id="section-86">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-84">&#182;</a>
+                <a class="pilcrow" href="#section-86">&#182;</a>
               </div>
               <p>if carousel, use the thresholds to determine the width</p>
 
@@ -1488,11 +1532,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-85">
+        <li id="section-87">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-85">&#182;</a>
+                <a class="pilcrow" href="#section-87">&#182;</a>
               </div>
               <p>newElWidth = (wrapWidth - (slider.settings.slideMargin * (slider.settings.maxSlides - 1))) / slider.settings.maxSlides;</p>
 
@@ -1515,11 +1559,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-86">
+        <li id="section-88">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-86">&#182;</a>
+                <a class="pilcrow" href="#section-88">&#182;</a>
               </div>
               <p>if viewport is smaller than minThreshold, return minSlides</p>
 
@@ -1531,11 +1575,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-87">
+        <li id="section-89">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-87">&#182;</a>
+                <a class="pilcrow" href="#section-89">&#182;</a>
               </div>
               <p>if viewport is larger than minThreshold, return maxSlides</p>
 
@@ -1547,11 +1591,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-88">
+        <li id="section-90">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-88">&#182;</a>
+                <a class="pilcrow" href="#section-90">&#182;</a>
               </div>
               <p>if viewport is between min / max thresholds, divide viewport width by first child width</p>
 
@@ -1565,11 +1609,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-89">
+        <li id="section-91">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-89">&#182;</a>
+                <a class="pilcrow" href="#section-91">&#182;</a>
               </div>
               <p>if &quot;vertical&quot; mode, slides showing will always be minSlides</p>
 
@@ -1590,11 +1634,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-90">
+        <li id="section-92">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-90">&#182;</a>
+                <a class="pilcrow" href="#section-92">&#182;</a>
               </div>
               <p>if moveSlides is specified by the user</p>
 
@@ -1608,11 +1652,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-91">
+        <li id="section-93">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-91">&#182;</a>
+                <a class="pilcrow" href="#section-93">&#182;</a>
               </div>
               <p>use a while loop to determine pages</p>
 
@@ -1624,11 +1668,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-92">
+        <li id="section-94">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-92">&#182;</a>
+                <a class="pilcrow" href="#section-94">&#182;</a>
               </div>
               <p>when breakpoint goes above children length, counter is the number of pages</p>
 
@@ -1644,11 +1688,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-93">
+        <li id="section-95">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-93">&#182;</a>
+                <a class="pilcrow" href="#section-95">&#182;</a>
               </div>
               <p>if moveSlides is 0 (auto) divide children length by sides showing, then round up</p>
 
@@ -1668,11 +1712,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-94">
+        <li id="section-96">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-94">&#182;</a>
+                <a class="pilcrow" href="#section-96">&#182;</a>
               </div>
               <p>if moveSlides was set by the user and moveSlides is less than number of slides showing</p>
 
@@ -1685,11 +1729,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-95">
+        <li id="section-97">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-95">&#182;</a>
+                <a class="pilcrow" href="#section-97">&#182;</a>
               </div>
               <p>if moveSlides is 0 (auto)</p>
 
@@ -1706,11 +1750,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-96">
+        <li id="section-98">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-96">&#182;</a>
+                <a class="pilcrow" href="#section-98">&#182;</a>
               </div>
               <p>if last slide, not infinite loop, and number of children is larger than specified maxSlides</p>
 
@@ -1722,11 +1766,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-97">
+        <li id="section-99">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-97">&#182;</a>
+                <a class="pilcrow" href="#section-99">&#182;</a>
               </div>
               <p>get the last child&#39;s position</p>
 
@@ -1738,11 +1782,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-98">
+        <li id="section-100">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-98">&#182;</a>
+                <a class="pilcrow" href="#section-100">&#182;</a>
               </div>
               <p>set the left position</p>
 
@@ -1754,11 +1798,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-99">
+        <li id="section-101">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-99">&#182;</a>
+                <a class="pilcrow" href="#section-101">&#182;</a>
               </div>
               <p>get the last showing index&#39;s position</p>
 
@@ -1770,11 +1814,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-100">
+        <li id="section-102">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-100">&#182;</a>
+                <a class="pilcrow" href="#section-102">&#182;</a>
               </div>
               <p>set the top position</p>
 
@@ -1786,11 +1830,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-101">
+        <li id="section-103">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-101">&#182;</a>
+                <a class="pilcrow" href="#section-103">&#182;</a>
               </div>
               <p>if not last slide</p>
 
@@ -1801,11 +1845,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-102">
+        <li id="section-104">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-102">&#182;</a>
+                <a class="pilcrow" href="#section-104">&#182;</a>
               </div>
               <p>get the position of the first showing slide</p>
 
@@ -1816,11 +1860,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-103">
+        <li id="section-105">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-103">&#182;</a>
+                <a class="pilcrow" href="#section-105">&#182;</a>
               </div>
               <p>check for last slide</p>
 
@@ -1831,11 +1875,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-104">
+        <li id="section-106">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-104">&#182;</a>
+                <a class="pilcrow" href="#section-106">&#182;</a>
               </div>
               <p>set the repective position</p>
 
@@ -1869,11 +1913,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-105">
+        <li id="section-107">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-105">&#182;</a>
+                <a class="pilcrow" href="#section-107">&#182;</a>
               </div>
               <p>use CSS transform</p>
 
@@ -1884,11 +1928,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-106">
+        <li id="section-108">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-106">&#182;</a>
+                <a class="pilcrow" href="#section-108">&#182;</a>
               </div>
               <p>determine the translate3d value</p>
 
@@ -1899,11 +1943,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-107">
+        <li id="section-109">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-107">&#182;</a>
+                <a class="pilcrow" href="#section-109">&#182;</a>
               </div>
               <p>add the CSS transition-duration</p>
 
@@ -1915,11 +1959,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-108">
+        <li id="section-110">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-108">&#182;</a>
+                <a class="pilcrow" href="#section-110">&#182;</a>
               </div>
               <p>set the property value</p>
 
@@ -1930,11 +1974,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-109">
+        <li id="section-111">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-109">&#182;</a>
+                <a class="pilcrow" href="#section-111">&#182;</a>
               </div>
               <p>bind a callback method - executes when CSS transition completes</p>
 
@@ -1945,11 +1989,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-110">
+        <li id="section-112">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-110">&#182;</a>
+                <a class="pilcrow" href="#section-112">&#182;</a>
               </div>
               <p>unbind the callback</p>
 
@@ -1965,11 +2009,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-111">
+        <li id="section-113">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-111">&#182;</a>
+                <a class="pilcrow" href="#section-113">&#182;</a>
               </div>
               <p>make the transition use &#39;linear&#39;</p>
 
@@ -1981,11 +2025,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-112">
+        <li id="section-114">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-112">&#182;</a>
+                <a class="pilcrow" href="#section-114">&#182;</a>
               </div>
               <p>bind a callback method - executes when CSS transition completes</p>
 
@@ -1996,11 +2040,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-113">
+        <li id="section-115">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-113">&#182;</a>
+                <a class="pilcrow" href="#section-115">&#182;</a>
               </div>
               <p>unbind the callback</p>
 
@@ -2011,11 +2055,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-114">
+        <li id="section-116">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-114">&#182;</a>
+                <a class="pilcrow" href="#section-116">&#182;</a>
               </div>
               <p>reset the position</p>
 
@@ -2026,11 +2070,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-115">
+        <li id="section-117">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-115">&#182;</a>
+                <a class="pilcrow" href="#section-117">&#182;</a>
               </div>
               <p>start the loop again</p>
 
@@ -2043,11 +2087,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-116">
+        <li id="section-118">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-116">&#182;</a>
+                <a class="pilcrow" href="#section-118">&#182;</a>
               </div>
               <p>use JS animate</p>
 
@@ -2069,11 +2113,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-117">
+        <li id="section-119">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-117">&#182;</a>
+                <a class="pilcrow" href="#section-119">&#182;</a>
               </div>
               <p>run the recursive loop after animation</p>
 
@@ -2095,11 +2139,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-118">
+        <li id="section-120">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-118">&#182;</a>
+                <a class="pilcrow" href="#section-120">&#182;</a>
               </div>
               <p>loop through each pager item</p>
 
@@ -2111,11 +2155,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-119">
+        <li id="section-121">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-119">&#182;</a>
+                <a class="pilcrow" href="#section-121">&#182;</a>
               </div>
               <p>if a buildPager function is supplied, use it to get pager link value, else use index + 1</p>
 
@@ -2132,11 +2176,11 @@ also strip any margin and padding from el</p>
         </li>
         
         
-        <li id="section-120">
+        <li id="section-122">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-120">&#182;</a>
+                <a class="pilcrow" href="#section-122">&#182;</a>
               </div>
               <p>var linkContent = slider.settings.buildPager &amp;&amp; $.isFunction(slider.settings.buildPager) ? slider.settings.buildPager(i) : i + 1;
 add the markup to the string</p>
@@ -2149,11 +2193,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-121">
+        <li id="section-123">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-121">&#182;</a>
+                <a class="pilcrow" href="#section-123">&#182;</a>
               </div>
               <p>populate the pager element with pager links</p>
 
@@ -2171,11 +2215,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-122">
+        <li id="section-124">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-122">&#182;</a>
+                <a class="pilcrow" href="#section-124">&#182;</a>
               </div>
               <p>create the pager DOM element</p>
 
@@ -2186,11 +2230,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-123">
+        <li id="section-125">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-123">&#182;</a>
+                <a class="pilcrow" href="#section-125">&#182;</a>
               </div>
               <p>if a pager selector was supplied, populate it with the pager</p>
 
@@ -2202,11 +2246,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-124">
+        <li id="section-126">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-124">&#182;</a>
+                <a class="pilcrow" href="#section-126">&#182;</a>
               </div>
               <p>if no pager selector was supplied, add it after the wrapper</p>
 
@@ -2219,11 +2263,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-125">
+        <li id="section-127">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-125">&#182;</a>
+                <a class="pilcrow" href="#section-127">&#182;</a>
               </div>
               <p>populate the pager</p>
 
@@ -2237,11 +2281,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-126">
+        <li id="section-128">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-126">&#182;</a>
+                <a class="pilcrow" href="#section-128">&#182;</a>
               </div>
               <p>assign the pager click binding</p>
 
@@ -2260,11 +2304,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-127">
+        <li id="section-129">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-127">&#182;</a>
+                <a class="pilcrow" href="#section-129">&#182;</a>
               </div>
               <p>bind click actions to the controls</p>
 
@@ -2276,11 +2320,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-128">
+        <li id="section-130">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-128">&#182;</a>
+                <a class="pilcrow" href="#section-130">&#182;</a>
               </div>
               <p>if nextSlector was supplied, populate it</p>
 
@@ -2293,11 +2337,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-129">
+        <li id="section-131">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-129">&#182;</a>
+                <a class="pilcrow" href="#section-131">&#182;</a>
               </div>
               <p>if prevSlector was supplied, populate it</p>
 
@@ -2310,11 +2354,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-130">
+        <li id="section-132">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-130">&#182;</a>
+                <a class="pilcrow" href="#section-132">&#182;</a>
               </div>
               <p>if no custom selectors were supplied</p>
 
@@ -2325,11 +2369,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-131">
+        <li id="section-133">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-131">&#182;</a>
+                <a class="pilcrow" href="#section-133">&#182;</a>
               </div>
               <p>add the controls to the DOM</p>
 
@@ -2340,11 +2384,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-132">
+        <li id="section-134">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-132">&#182;</a>
+                <a class="pilcrow" href="#section-134">&#182;</a>
               </div>
               <p>add the control elements to the directionEl</p>
 
@@ -2355,11 +2399,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-133">
+        <li id="section-135">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-133">&#182;</a>
+                <a class="pilcrow" href="#section-135">&#182;</a>
               </div>
               <p>slider.viewport.append(slider.controls.directionEl);</p>
 
@@ -2379,11 +2423,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-134">
+        <li id="section-136">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-134">&#182;</a>
+                <a class="pilcrow" href="#section-136">&#182;</a>
               </div>
               <p>add the controls to the DOM</p>
 
@@ -2394,11 +2438,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-135">
+        <li id="section-137">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-135">&#182;</a>
+                <a class="pilcrow" href="#section-137">&#182;</a>
               </div>
               <p>bind click actions to the controls</p>
 
@@ -2410,11 +2454,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-136">
+        <li id="section-138">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-136">&#182;</a>
+                <a class="pilcrow" href="#section-138">&#182;</a>
               </div>
               <p>if autoControlsCombine, insert only the &quot;start&quot; control</p>
 
@@ -2426,11 +2470,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-137">
+        <li id="section-139">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-137">&#182;</a>
+                <a class="pilcrow" href="#section-139">&#182;</a>
               </div>
               <p>if autoControlsCombine is false, insert both controls</p>
 
@@ -2443,11 +2487,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-138">
+        <li id="section-140">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-138">&#182;</a>
+                <a class="pilcrow" href="#section-140">&#182;</a>
               </div>
               <p>if auto controls selector was supplied, populate it with the controls</p>
 
@@ -2459,11 +2503,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-139">
+        <li id="section-141">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-139">&#182;</a>
+                <a class="pilcrow" href="#section-141">&#182;</a>
               </div>
               <p>if auto controls selector was not supplied, add it after the wrapper</p>
 
@@ -2476,11 +2520,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-140">
+        <li id="section-142">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-140">&#182;</a>
+                <a class="pilcrow" href="#section-142">&#182;</a>
               </div>
               <p>update the auto controls</p>
 
@@ -2497,11 +2541,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-141">
+        <li id="section-143">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-141">&#182;</a>
+                <a class="pilcrow" href="#section-143">&#182;</a>
               </div>
               <p>cycle through each child</p>
 
@@ -2512,11 +2556,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-142">
+        <li id="section-144">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-142">&#182;</a>
+                <a class="pilcrow" href="#section-144">&#182;</a>
               </div>
               <p>get the image title attribute</p>
 
@@ -2527,17 +2571,19 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-143">
+        <li id="section-145">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-143">&#182;</a>
+                <a class="pilcrow" href="#section-145">&#182;</a>
               </div>
               <p>append the caption</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>				<span class="keyword">if</span> (title != <span class="literal">undefined</span>) $(<span class="keyword">this</span>).append(<span class="string">'&lt;div class="bx-caption"&gt;&lt;span&gt;'</span> + title + <span class="string">'&lt;/span&gt;&lt;/div&gt;'</span>);
+            <div class="content"><div class='highlight'><pre>				<span class="keyword">if</span> (title != <span class="literal">undefined</span> &amp;&amp; (<span class="string">''</span> + title).length) {
+                    $(<span class="keyword">this</span>).append(<span class="string">'&lt;div class="bx-caption"&gt;&lt;span&gt;'</span> + title + <span class="string">'&lt;/span&gt;&lt;/div&gt;'</span>);
+                }
 			});
 		}
 		
@@ -2552,11 +2598,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-144">
+        <li id="section-146">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-144">&#182;</a>
+                <a class="pilcrow" href="#section-146">&#182;</a>
               </div>
               <p>if auto show is running, stop it</p>
 
@@ -2578,11 +2624,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-145">
+        <li id="section-147">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-145">&#182;</a>
+                <a class="pilcrow" href="#section-147">&#182;</a>
               </div>
               <p>if auto show is running, stop it</p>
 
@@ -2626,11 +2672,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-146">
+        <li id="section-148">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-146">&#182;</a>
+                <a class="pilcrow" href="#section-148">&#182;</a>
               </div>
               <p>if auto show is running, stop it</p>
 
@@ -2643,11 +2689,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-147">
+        <li id="section-149">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-147">&#182;</a>
+                <a class="pilcrow" href="#section-149">&#182;</a>
               </div>
               <p>if clicked pager link is not active, continue with the goToSlide call</p>
 
@@ -2668,29 +2714,33 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-148">
+        <li id="section-150">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-148">&#182;</a>
+                <a class="pilcrow" href="#section-150">&#182;</a>
               </div>
               <p>if &quot;short&quot; pager type</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>			<span class="keyword">if</span>(slider.settings.pagerType == <span class="string">'short'</span>){
-				slider.pagerEl.html((slideIndex + <span class="number">1</span>) + slider.settings.pagerShortSeparator + slider.children.length);
+            <div class="content"><div class='highlight'><pre>			<span class="keyword">var</span> len = slider.children.length; <span class="comment">// nb of children</span>
+			<span class="keyword">if</span>(slider.settings.pagerType == <span class="string">'short'</span>){
+				<span class="keyword">if</span>(slider.settings.maxSlides &gt; <span class="number">1</span>) {
+					len = Math.ceil(slider.children.length/slider.settings.maxSlides);
+				}
+				slider.pagerEl.html( (slideIndex + <span class="number">1</span>) + slider.settings.pagerShortSeparator + len);
 				<span class="keyword">return</span>;
 			}</pre></div></div>
             
         </li>
         
         
-        <li id="section-149">
+        <li id="section-151">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-149">&#182;</a>
+                <a class="pilcrow" href="#section-151">&#182;</a>
               </div>
               <p>remove all pager active classes</p>
 
@@ -2701,11 +2751,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-150">
+        <li id="section-152">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-150">&#182;</a>
+                <a class="pilcrow" href="#section-152">&#182;</a>
               </div>
               <p>apply the active class for all pagers</p>
 
@@ -2722,11 +2772,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-151">
+        <li id="section-153">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-151">&#182;</a>
+                <a class="pilcrow" href="#section-153">&#182;</a>
               </div>
               <p>if infinte loop is true</p>
 
@@ -2738,11 +2788,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-152">
+        <li id="section-154">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-152">&#182;</a>
+                <a class="pilcrow" href="#section-154">&#182;</a>
               </div>
               <p>first slide</p>
 
@@ -2753,11 +2803,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-153">
+        <li id="section-155">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-153">&#182;</a>
+                <a class="pilcrow" href="#section-155">&#182;</a>
               </div>
               <p>set the new position</p>
 
@@ -2768,11 +2818,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-154">
+        <li id="section-156">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-154">&#182;</a>
+                <a class="pilcrow" href="#section-156">&#182;</a>
               </div>
               <p>carousel, last slide</p>
 
@@ -2784,11 +2834,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-155">
+        <li id="section-157">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-155">&#182;</a>
+                <a class="pilcrow" href="#section-157">&#182;</a>
               </div>
               <p>last slide</p>
 
@@ -2804,11 +2854,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-156">
+        <li id="section-158">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-156">&#182;</a>
+                <a class="pilcrow" href="#section-158">&#182;</a>
               </div>
               <p>declare that the transition is complete</p>
 
@@ -2819,11 +2869,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-157">
+        <li id="section-159">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-157">&#182;</a>
+                <a class="pilcrow" href="#section-159">&#182;</a>
               </div>
               <p>onSlideAfter callback</p>
 
@@ -2843,11 +2893,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-158">
+        <li id="section-160">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-158">&#182;</a>
+                <a class="pilcrow" href="#section-160">&#182;</a>
               </div>
               <p>if autoControlsCombine is true, replace the current control with the new state </p>
 
@@ -2859,11 +2909,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-159">
+        <li id="section-161">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-159">&#182;</a>
+                <a class="pilcrow" href="#section-161">&#182;</a>
               </div>
               <p>if autoControlsCombine is false, apply the &quot;active&quot; class to the appropriate control </p>
 
@@ -2887,11 +2937,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-160">
+        <li id="section-162">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-160">&#182;</a>
+                <a class="pilcrow" href="#section-162">&#182;</a>
               </div>
               <p>if first slide</p>
 
@@ -2904,11 +2954,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-161">
+        <li id="section-163">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-161">&#182;</a>
+                <a class="pilcrow" href="#section-163">&#182;</a>
               </div>
               <p>if last slide</p>
 
@@ -2921,11 +2971,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-162">
+        <li id="section-164">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-162">&#182;</a>
+                <a class="pilcrow" href="#section-164">&#182;</a>
               </div>
               <p>if any slide in the middle</p>
 
@@ -2946,11 +2996,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-163">
+        <li id="section-165">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-163">&#182;</a>
+                <a class="pilcrow" href="#section-165">&#182;</a>
               </div>
               <p>if autoDelay was supplied, launch the auto show using a setTimeout() call</p>
 
@@ -2962,11 +3012,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-164">
+        <li id="section-166">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-164">&#182;</a>
+                <a class="pilcrow" href="#section-166">&#182;</a>
               </div>
               <p>if autoDelay was not supplied, start the auto show normally</p>
 
@@ -2979,11 +3029,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-165">
+        <li id="section-167">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-165">&#182;</a>
+                <a class="pilcrow" href="#section-167">&#182;</a>
               </div>
               <p>if autoHover is requested</p>
 
@@ -2994,11 +3044,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-166">
+        <li id="section-168">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-166">&#182;</a>
+                <a class="pilcrow" href="#section-168">&#182;</a>
               </div>
               <p>on el hover</p>
 
@@ -3009,11 +3059,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-167">
+        <li id="section-169">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-167">&#182;</a>
+                <a class="pilcrow" href="#section-169">&#182;</a>
               </div>
               <p>if the auto show is currently playing (has an active interval)</p>
 
@@ -3024,11 +3074,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-168">
+        <li id="section-170">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-168">&#182;</a>
+                <a class="pilcrow" href="#section-170">&#182;</a>
               </div>
               <p>stop the auto show and pass true agument which will prevent control update</p>
 
@@ -3039,11 +3089,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-169">
+        <li id="section-171">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-169">&#182;</a>
+                <a class="pilcrow" href="#section-171">&#182;</a>
               </div>
               <p>create a new autoPaused value which will be used by the relative &quot;mouseout&quot; event</p>
 
@@ -3056,11 +3106,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-170">
+        <li id="section-172">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-170">&#182;</a>
+                <a class="pilcrow" href="#section-172">&#182;</a>
               </div>
               <p>if the autoPaused value was created be the prior &quot;mouseover&quot; event</p>
 
@@ -3071,11 +3121,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-171">
+        <li id="section-173">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-171">&#182;</a>
+                <a class="pilcrow" href="#section-173">&#182;</a>
               </div>
               <p>start the auto show and pass true agument which will prevent control update</p>
 
@@ -3086,11 +3136,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-172">
+        <li id="section-174">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-172">&#182;</a>
+                <a class="pilcrow" href="#section-174">&#182;</a>
               </div>
               <p>reset the autoPaused value</p>
 
@@ -3111,11 +3161,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-173">
+        <li id="section-175">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-173">&#182;</a>
+                <a class="pilcrow" href="#section-175">&#182;</a>
               </div>
               <p>if autoDirection is &quot;next&quot;, append a clone of the entire slider</p>
 
@@ -3127,11 +3177,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-174">
+        <li id="section-176">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-174">&#182;</a>
+                <a class="pilcrow" href="#section-176">&#182;</a>
               </div>
               <p>if autoDirection is &quot;prev&quot;, prepend a clone of the entire slider, and set the left position</p>
 
@@ -3147,11 +3197,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-175">
+        <li id="section-177">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-175">&#182;</a>
+                <a class="pilcrow" href="#section-177">&#182;</a>
               </div>
               <p>do not allow controls in ticker mode</p>
 
@@ -3164,11 +3214,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-176">
+        <li id="section-178">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-176">&#182;</a>
+                <a class="pilcrow" href="#section-178">&#182;</a>
               </div>
               <p>if autoHover is requested</p>
 
@@ -3179,11 +3229,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-177">
+        <li id="section-179">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-177">&#182;</a>
+                <a class="pilcrow" href="#section-179">&#182;</a>
               </div>
               <p>on el hover</p>
 
@@ -3196,11 +3246,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-178">
+        <li id="section-180">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-178">&#182;</a>
+                <a class="pilcrow" href="#section-180">&#182;</a>
               </div>
               <p>calculate the total width of children (used to calculate the speed ratio)</p>
 
@@ -3214,11 +3264,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-179">
+        <li id="section-181">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-179">&#182;</a>
+                <a class="pilcrow" href="#section-181">&#182;</a>
               </div>
               <p>calculate the speed ratio (used to determine the new speed to finish the paused animation)</p>
 
@@ -3229,11 +3279,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-180">
+        <li id="section-182">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-180">&#182;</a>
+                <a class="pilcrow" href="#section-182">&#182;</a>
               </div>
               <p>determine which property to use</p>
 
@@ -3244,11 +3294,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-181">
+        <li id="section-183">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-181">&#182;</a>
+                <a class="pilcrow" href="#section-183">&#182;</a>
               </div>
               <p>calculate the new speed</p>
 
@@ -3262,11 +3312,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-182">
+        <li id="section-184">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-182">&#182;</a>
+                <a class="pilcrow" href="#section-184">&#182;</a>
               </div>
               <p>start the ticker loop</p>
 
@@ -3286,11 +3336,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-183">
+        <li id="section-185">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-183">&#182;</a>
+                <a class="pilcrow" href="#section-185">&#182;</a>
               </div>
               <p>if &quot;next&quot; animate left position to last child, then reset left to 0</p>
 
@@ -3302,11 +3352,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-184">
+        <li id="section-186">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-184">&#182;</a>
+                <a class="pilcrow" href="#section-186">&#182;</a>
               </div>
               <p>if &quot;prev&quot; animate left position to 0, then reset left to first non-clone child</p>
 
@@ -3329,11 +3379,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-185">
+        <li id="section-187">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-185">&#182;</a>
+                <a class="pilcrow" href="#section-187">&#182;</a>
               </div>
               <p>initialize object to contain all touch values</p>
 
@@ -3360,11 +3410,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-186">
+        <li id="section-188">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-186">&#182;</a>
+                <a class="pilcrow" href="#section-188">&#182;</a>
               </div>
               <p>record the original position when touch starts</p>
 
@@ -3376,11 +3426,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-187">
+        <li id="section-189">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-187">&#182;</a>
+                <a class="pilcrow" href="#section-189">&#182;</a>
               </div>
               <p>record the starting touch x, y coordinates</p>
 
@@ -3392,11 +3442,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-188">
+        <li id="section-190">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-188">&#182;</a>
+                <a class="pilcrow" href="#section-190">&#182;</a>
               </div>
               <p>bind a &quot;touchmove&quot; event to the viewport</p>
 
@@ -3407,11 +3457,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-189">
+        <li id="section-191">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-189">&#182;</a>
+                <a class="pilcrow" href="#section-191">&#182;</a>
               </div>
               <p>bind a &quot;touchend&quot; event to the viewport</p>
 
@@ -3433,11 +3483,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-190">
+        <li id="section-192">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-190">&#182;</a>
+                <a class="pilcrow" href="#section-192">&#182;</a>
               </div>
               <p>if scrolling on y axis, do not prevent default</p>
 
@@ -3449,11 +3499,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-191">
+        <li id="section-193">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-191">&#182;</a>
+                <a class="pilcrow" href="#section-193">&#182;</a>
               </div>
               <p>x axis swipe</p>
 
@@ -3465,11 +3515,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-192">
+        <li id="section-194">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-192">&#182;</a>
+                <a class="pilcrow" href="#section-194">&#182;</a>
               </div>
               <p>y axis swipe</p>
 
@@ -3484,11 +3534,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-193">
+        <li id="section-195">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-193">&#182;</a>
+                <a class="pilcrow" href="#section-195">&#182;</a>
               </div>
               <p>if horizontal, drag along x axis</p>
 
@@ -3501,11 +3551,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-194">
+        <li id="section-196">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-194">&#182;</a>
+                <a class="pilcrow" href="#section-196">&#182;</a>
               </div>
               <p>if vertical, drag along y axis</p>
 
@@ -3533,11 +3583,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-195">
+        <li id="section-197">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-195">&#182;</a>
+                <a class="pilcrow" href="#section-197">&#182;</a>
               </div>
               <p>record end x, y positions</p>
 
@@ -3549,11 +3599,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-196">
+        <li id="section-198">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-196">&#182;</a>
+                <a class="pilcrow" href="#section-198">&#182;</a>
               </div>
               <p>if fade mode, check if absolute x distance clears the threshold</p>
 
@@ -3569,11 +3619,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-197">
+        <li id="section-199">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-197">&#182;</a>
+                <a class="pilcrow" href="#section-199">&#182;</a>
               </div>
               <p>not fade mode</p>
 
@@ -3585,11 +3635,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-198">
+        <li id="section-200">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-198">&#182;</a>
+                <a class="pilcrow" href="#section-200">&#182;</a>
               </div>
               <p>calculate distance and el&#39;s animate property</p>
 
@@ -3606,11 +3656,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-199">
+        <li id="section-201">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-199">&#182;</a>
+                <a class="pilcrow" href="#section-201">&#182;</a>
               </div>
               <p>if not infinite loop and first / last slide, do not attempt a slide transition</p>
 
@@ -3623,11 +3673,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-200">
+        <li id="section-202">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-200">&#182;</a>
+                <a class="pilcrow" href="#section-202">&#182;</a>
               </div>
               <p>check if distance clears threshold</p>
 
@@ -3641,11 +3691,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-201">
+        <li id="section-203">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-201">&#182;</a>
+                <a class="pilcrow" href="#section-203">&#182;</a>
               </div>
               <p>el.animate(property, 200);</p>
 
@@ -3666,11 +3716,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-202">
+        <li id="section-204">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-202">&#182;</a>
+                <a class="pilcrow" href="#section-204">&#182;</a>
               </div>
               <p>get the new window dimens (again, thank you IE)</p>
 
@@ -3682,11 +3732,11 @@ add the markup to the string</p>
         </li>
         
         
-        <li id="section-203">
+        <li id="section-205">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-203">&#182;</a>
+                <a class="pilcrow" href="#section-205">&#182;</a>
               </div>
               <p>make sure that it is a true window resize
 <em>we must check this because our dinosaur friend IE fires a window resize event when certain DOM elements
@@ -3699,11 +3749,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-204">
+        <li id="section-206">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-204">&#182;</a>
+                <a class="pilcrow" href="#section-206">&#182;</a>
               </div>
               <p>set the new window dimens</p>
 
@@ -3715,11 +3765,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-205">
+        <li id="section-207">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-205">&#182;</a>
+                <a class="pilcrow" href="#section-207">&#182;</a>
               </div>
               <p>update all dynamic elements</p>
 
@@ -3749,11 +3799,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-206">
+        <li id="section-208">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-206">&#182;</a>
+                <a class="pilcrow" href="#section-208">&#182;</a>
               </div>
               <p>if plugin is currently in motion, ignore request</p>
 
@@ -3764,11 +3814,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-207">
+        <li id="section-209">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-207">&#182;</a>
+                <a class="pilcrow" href="#section-209">&#182;</a>
               </div>
               <p>declare that plugin is in motion</p>
 
@@ -3779,11 +3829,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-208">
+        <li id="section-210">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-208">&#182;</a>
+                <a class="pilcrow" href="#section-210">&#182;</a>
               </div>
               <p>store the old index</p>
 
@@ -3794,11 +3844,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-209">
+        <li id="section-211">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-209">&#182;</a>
+                <a class="pilcrow" href="#section-211">&#182;</a>
               </div>
               <p>if slideIndex is less than zero, set active index to last child (this happens during infinite loop)</p>
 
@@ -3810,11 +3860,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-210">
+        <li id="section-212">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-210">&#182;</a>
+                <a class="pilcrow" href="#section-212">&#182;</a>
               </div>
               <p>if slideIndex is greater than children length, set active index to 0 (this happens during infinite loop)</p>
 
@@ -3826,11 +3876,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-211">
+        <li id="section-213">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-211">&#182;</a>
+                <a class="pilcrow" href="#section-213">&#182;</a>
               </div>
               <p>set active index to requested slide</p>
 
@@ -3843,11 +3893,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-212">
+        <li id="section-214">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-212">&#182;</a>
+                <a class="pilcrow" href="#section-214">&#182;</a>
               </div>
               <p>onSlideBefore, onSlideNext, onSlidePrev callbacks</p>
 
@@ -3863,11 +3913,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-213">
+        <li id="section-215">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-213">&#182;</a>
+                <a class="pilcrow" href="#section-215">&#182;</a>
               </div>
               <p>check if last slide</p>
 
@@ -3878,11 +3928,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-214">
+        <li id="section-216">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-214">&#182;</a>
+                <a class="pilcrow" href="#section-216">&#182;</a>
               </div>
               <p>update the pager with active class</p>
 
@@ -3893,11 +3943,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-215">
+        <li id="section-217">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-215">&#182;</a>
+                <a class="pilcrow" href="#section-217">&#182;</a>
               </div>
               <p>// check for direction control update</p>
 
@@ -3908,11 +3958,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-216">
+        <li id="section-218">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-216">&#182;</a>
+                <a class="pilcrow" href="#section-218">&#182;</a>
               </div>
               <p>if slider is set to mode: &quot;fade&quot;</p>
 
@@ -3923,11 +3973,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-217">
+        <li id="section-219">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-217">&#182;</a>
+                <a class="pilcrow" href="#section-219">&#182;</a>
               </div>
               <p>if adaptiveHeight is true and next height is different from current height, animate to the new height</p>
 
@@ -3940,11 +3990,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-218">
+        <li id="section-220">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-218">&#182;</a>
+                <a class="pilcrow" href="#section-220">&#182;</a>
               </div>
               <p>fade out the visible child and reset its z-index value</p>
 
@@ -3955,11 +4005,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-219">
+        <li id="section-221">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-219">&#182;</a>
+                <a class="pilcrow" href="#section-221">&#182;</a>
               </div>
               <p>fade in the newly requested slide</p>
 
@@ -3973,11 +4023,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-220">
+        <li id="section-222">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-220">&#182;</a>
+                <a class="pilcrow" href="#section-222">&#182;</a>
               </div>
               <p>slider mode is not &quot;fade&quot;</p>
 
@@ -3988,11 +4038,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-221">
+        <li id="section-223">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-221">&#182;</a>
+                <a class="pilcrow" href="#section-223">&#182;</a>
               </div>
               <p>if adaptiveHeight is true and next height is different from current height, animate to the new height</p>
 
@@ -4007,11 +4057,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-222">
+        <li id="section-224">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-222">&#182;</a>
+                <a class="pilcrow" href="#section-224">&#182;</a>
               </div>
               <p>if carousel and not infinite loop</p>
 
@@ -4023,11 +4073,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-223">
+        <li id="section-225">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-223">&#182;</a>
+                <a class="pilcrow" href="#section-225">&#182;</a>
               </div>
               <p>get the last child position</p>
 
@@ -4039,11 +4089,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-224">
+        <li id="section-226">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-224">&#182;</a>
+                <a class="pilcrow" href="#section-226">&#182;</a>
               </div>
               <p>calculate the position of the last slide</p>
 
@@ -4055,11 +4105,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-225">
+        <li id="section-227">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-225">&#182;</a>
+                <a class="pilcrow" href="#section-227">&#182;</a>
               </div>
               <p>get last showing index position</p>
 
@@ -4072,11 +4122,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-226">
+        <li id="section-228">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-226">&#182;</a>
+                <a class="pilcrow" href="#section-228">&#182;</a>
               </div>
               <p>horizontal carousel, going previous while on first slide (infiniteLoop mode)</p>
 
@@ -4087,11 +4137,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-227">
+        <li id="section-229">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-227">&#182;</a>
+                <a class="pilcrow" href="#section-229">&#182;</a>
               </div>
               <p>get the last child position</p>
 
@@ -4104,11 +4154,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-228">
+        <li id="section-230">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-228">&#182;</a>
+                <a class="pilcrow" href="#section-230">&#182;</a>
               </div>
               <p>if infinite loop and &quot;Next&quot; is clicked on the last slide</p>
 
@@ -4119,11 +4169,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-229">
+        <li id="section-231">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-229">&#182;</a>
+                <a class="pilcrow" href="#section-231">&#182;</a>
               </div>
               <p>get the last clone position</p>
 
@@ -4135,11 +4185,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-230">
+        <li id="section-232">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-230">&#182;</a>
+                <a class="pilcrow" href="#section-232">&#182;</a>
               </div>
               <p>normal non-zero requests</p>
 
@@ -4160,11 +4210,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-231">
+        <li id="section-233">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-231">&#182;</a>
+                <a class="pilcrow" href="#section-233">&#182;</a>
               </div>
               <p>plugin values to be animated</p>
 
@@ -4183,11 +4233,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-232">
+        <li id="section-234">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-232">&#182;</a>
+                <a class="pilcrow" href="#section-234">&#182;</a>
               </div>
               <p>if infiniteLoop is false and last page is showing, disregard call</p>
 
@@ -4206,11 +4256,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-233">
+        <li id="section-235">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-233">&#182;</a>
+                <a class="pilcrow" href="#section-235">&#182;</a>
               </div>
               <p>if infiniteLoop is false and last page is showing, disregard call</p>
 
@@ -4232,11 +4282,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-234">
+        <li id="section-236">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-234">&#182;</a>
+                <a class="pilcrow" href="#section-236">&#182;</a>
               </div>
               <p>if an interval already exists, disregard call</p>
 
@@ -4247,11 +4297,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-235">
+        <li id="section-237">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-235">&#182;</a>
+                <a class="pilcrow" href="#section-237">&#182;</a>
               </div>
               <p>create an interval</p>
 
@@ -4264,11 +4314,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-236">
+        <li id="section-238">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-236">&#182;</a>
+                <a class="pilcrow" href="#section-238">&#182;</a>
               </div>
               <p>if auto controls are displayed and preventControlUpdate is not true</p>
 
@@ -4288,11 +4338,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-237">
+        <li id="section-239">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-237">&#182;</a>
+                <a class="pilcrow" href="#section-239">&#182;</a>
               </div>
               <p>if no interval exists, disregard call</p>
 
@@ -4303,11 +4353,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-238">
+        <li id="section-240">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-238">&#182;</a>
+                <a class="pilcrow" href="#section-240">&#182;</a>
               </div>
               <p>clear the interval</p>
 
@@ -4319,11 +4369,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-239">
+        <li id="section-241">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-239">&#182;</a>
+                <a class="pilcrow" href="#section-241">&#182;</a>
               </div>
               <p>if auto controls are displayed and preventControlUpdate is not true</p>
 
@@ -4354,11 +4404,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-240">
+        <li id="section-242">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-240">&#182;</a>
+                <a class="pilcrow" href="#section-242">&#182;</a>
               </div>
               <p>resize all children in ratio to new screen size</p>
 
@@ -4369,11 +4419,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-241">
+        <li id="section-243">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-241">&#182;</a>
+                <a class="pilcrow" href="#section-243">&#182;</a>
               </div>
               <p>adjust the height</p>
 
@@ -4384,11 +4434,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-242">
+        <li id="section-244">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-242">&#182;</a>
+                <a class="pilcrow" href="#section-244">&#182;</a>
               </div>
               <p>update the slide position</p>
 
@@ -4399,11 +4449,11 @@ are resized. Can you just die already?</em></p>
         </li>
         
         
-        <li id="section-243">
+        <li id="section-245">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-243">&#182;</a>
+                <a class="pilcrow" href="#section-245">&#182;</a>
               </div>
               <p>if active.last was true before the screen resize, we want
 to keep it last no matter what screen size we end on</p>
@@ -4415,11 +4465,11 @@ to keep it last no matter what screen size we end on</p>
         </li>
         
         
-        <li id="section-244">
+        <li id="section-246">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-244">&#182;</a>
+                <a class="pilcrow" href="#section-246">&#182;</a>
               </div>
               <p>if the active index (page) no longer exists due to the resize, simply set the index as last</p>
 
@@ -4430,11 +4480,11 @@ to keep it last no matter what screen size we end on</p>
         </li>
         
         
-        <li id="section-245">
+        <li id="section-247">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-245">&#182;</a>
+                <a class="pilcrow" href="#section-247">&#182;</a>
               </div>
               <p>if a pager is being displayed and a custom pager is not being used, update it</p>
 
@@ -4454,11 +4504,11 @@ to keep it last no matter what screen size we end on</p>
         </li>
         
         
-        <li id="section-246">
+        <li id="section-248">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-246">&#182;</a>
+                <a class="pilcrow" href="#section-248">&#182;</a>
               </div>
               <p>don&#39;t do anything if slider has already been destroyed</p>
 
@@ -4467,8 +4517,11 @@ to keep it last no matter what screen size we end on</p>
             <div class="content"><div class='highlight'><pre>			<span class="keyword">if</span>(!slider.initialized) <span class="keyword">return</span>;
 			slider.initialized = <span class="literal">false</span>;
 			$(<span class="string">'.bx-clone'</span>, <span class="keyword">this</span>).remove();
-			slider.children.removeAttr(<span class="string">'style'</span>);
-			<span class="keyword">this</span>.removeAttr(<span class="string">'style'</span>).unwrap().unwrap();
+			slider.children.each(<span class="keyword">function</span>() {
+				$(<span class="keyword">this</span>).data(<span class="string">"origStyle"</span>) != <span class="literal">undefined</span> ? $(<span class="keyword">this</span>).attr(<span class="string">"style"</span>, $(<span class="keyword">this</span>).data(<span class="string">"origStyle"</span>)) : $(<span class="keyword">this</span>).removeAttr(<span class="string">'style'</span>);
+			});
+			$(<span class="keyword">this</span>).data(<span class="string">"origStyle"</span>) != <span class="literal">undefined</span> ? <span class="keyword">this</span>.attr(<span class="string">"style"</span>, $(<span class="keyword">this</span>).data(<span class="string">"origStyle"</span>)) : $(<span class="keyword">this</span>).removeAttr(<span class="string">'style'</span>);
+			$(<span class="keyword">this</span>).unwrap().unwrap();
 			<span class="keyword">if</span>(slider.controls.el) slider.controls.el.remove();
 			<span class="keyword">if</span>(slider.controls.next) slider.controls.next.remove();
 			<span class="keyword">if</span>(slider.controls.prev) slider.controls.prev.remove();
@@ -4476,7 +4529,7 @@ to keep it last no matter what screen size we end on</p>
 			$(<span class="string">'.bx-caption'</span>, <span class="keyword">this</span>).remove();
 			<span class="keyword">if</span>(slider.controls.autoEl) slider.controls.autoEl.remove();
 			clearInterval(slider.interval);
-			$(window).unbind(<span class="string">'resize'</span>, resizeWindow);
+			<span class="keyword">if</span>(slider.settings.responsive) $(window).unbind(<span class="string">'resize'</span>, resizeWindow);
 		}
 
 		<span class="comment">/**
@@ -4493,11 +4546,11 @@ to keep it last no matter what screen size we end on</p>
         </li>
         
         
-        <li id="section-247">
+        <li id="section-249">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-247">&#182;</a>
+                <a class="pilcrow" href="#section-249">&#182;</a>
               </div>
               <p>returns the current jQuery object</p>
 
