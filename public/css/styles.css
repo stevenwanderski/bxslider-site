@@ -243,7 +243,7 @@ aside {
 
 .home #primary li {
 	list-style: disc;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	color: #555;
 	font-size: 1em;
 }
@@ -359,7 +359,7 @@ aside {
 .examples-list ol li {
 	list-style: decimal;
 	color: #666;
-	margin-bottom: 4px;
+	margin-bottom: 8px;
 }
 
 .example-item ol li {
