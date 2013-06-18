@@ -824,7 +824,11 @@ footer .icon-icomoon-bx-star {
 }
 
 footer p.pix {
-	margin-top: 35px;
+	margin-top: 25px;
+}
+
+footer .twitter {
+	margin-top: 16px;
 }
 
 /** RESPONSIVE BREAKPOINTS
