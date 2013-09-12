@@ -5,15 +5,15 @@
 	<meta name="keywords" content="content slider, responsive image gallery, responsive image gallery, image slider, image fade, image rotator" />
 	<meta name="description" content="Respsonsive jQuery content slider." />
 	<meta name="google-site-verification" content="25AuAMRK4hudMM4ZYCQnmQp9W9XtTtsutIDiZmKnjOo" />
-	
+
 	<link rel="stylesheet" href="/lib/jquery.bxslider.css" type="text/css" />
 	<link rel="stylesheet" href="/css/styles.css" type="text/css" />
 	<link rel="stylesheet" href="/css/github.css" type="text/css" />
-	
+
 	<!--[if lt IE 9]>
 	<script src="/js/html5shiv.js"></script>
 	<![endif]-->
-	
+
 	<script src="/js/jquery.min.js"></script>
 	<% if @video %>
 		<script src="/lib/plugins/jquery.fitvids.js"></script>
@@ -24,7 +24,7 @@
 	<script src="/lib/jquery.bxslider.js"></script>
 	<script src="/js/rainbow.min.js"></script>
 	<script src="/js/scripts.js"></script>
-	
+
 	<script type="text/javascript">
 
 	  var _gaq = _gaq || [];
@@ -41,22 +41,22 @@
 </head>
 
 <body class="<%= @class %>">
-	
+
 	<header>
 		<div class="inner clearfix"><%= erb(:"partials/header", :layout => false) %></div>
 	</header>
-	
+
 	<section id="main">
 		<div class="inner clearfix">
-			
+
 			<%= erb(:"partials/home_slider", :layout => false) if @front %>
-			
+
 			<aside>
 			  <div class="block block-advert">
 			  	<div id="bsap_1263752" class="bsarocks bsap_cb576c7e6424169a9c51747ec0e4a03a"></div>
 					<a href="http://yoggrt.com" target="_blank" class="yoggrt-link">Ads by Yoggrt</a>
 			  </div>
-			
+
 			  <div class="block block-buttons">
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="frm-paypal">
 						<input type="hidden" name="cmd" value="_s-xclick">
@@ -67,7 +67,7 @@
 			    <a href="" class="btn btn-donate"><span class="icon-icomoon-beer"></span> Buy me a beer</a>
 			    <a href="https://github.com/wandoledzep/bxslider-4" target="_blank" class="btn"><span class="icon-icomoon-github"></span> View on Github</a>
 			  </div>
-			
+
 				<div class="block block-signup">
 					<form action="http://bxslider.us1.list-manage.com/subscribe/post?u=16b4e3f97dfcc63dead888bd8&amp;id=f176749817" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 						<h4>Receive updates<br />about bxSlider</h4>
@@ -79,17 +79,17 @@
 
 				<div class="block block-v3">
 					<h4>Still using the old<br />slider (v3)?</h4>
-					<a href="http://v3.bxslider.com">Click here for v3 documentation</a>
+					<a href="/v3">Click here for v3 documentation</a>
 				</div>
-				
+
 				<div class="block block-about">
 				  <h4>Wondering how bxSlider was made?</h4>
 				  <p><a href="/about">Click here to see the annotated source code with a description of the coding process</a></p>
 				</div>
 			</aside>
-		
+
 			<div id="primary"><%= yield %></div>
-	
+
 		</div>
 	</section>
 

@@ -4099,7 +4099,7 @@ are resized. Can you just die already?</em></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>						moveBy = slider.viewport.width() - lastChild.width();
+            <div class="content"><div class='highlight'><pre>						moveBy = slider.viewport.width() - lastChild.outerWidth();
 					}<span class="keyword">else</span>{</pre></div></div>
             
         </li>
@@ -4414,7 +4414,7 @@ are resized. Can you just die already?</em></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>			slider.children.add(el.find(<span class="string">'.bx-clone'</span>)).width(getSlideWidth());</pre></div></div>
+            <div class="content"><div class='highlight'><pre>			slider.children.add(el.find(<span class="string">'.bx-clone'</span>)).outerWidth(getSlideWidth());</pre></div></div>
             
         </li>
         
