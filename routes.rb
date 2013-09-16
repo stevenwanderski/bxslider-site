@@ -48,6 +48,7 @@ get '/about' do
 end
 
 get '/v3' do
+  @title = 'Legacy Documentation'
   erb :v3
 end
 
