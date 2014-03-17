@@ -1,23 +1,23 @@
 $(function(){
-	
+
 	$('.home .bxslider').bxSlider({
 		auto: true,
 		mode: 'fade'
 	});
-	
+
 	/**
 	 * QUICK REFERENCE
 	 */
-	
+
 	// check if the window bindings should be applied (only if the element is present)
 	var $reference = $('.reference-wrap');
 	if($reference.length > 0){
-	
+
 		// toggle the menu
 		$('.reference-wrap h3').click(function() {
 			$('.reference-content').slideToggle(300);
 		});
-	
+
 		// scroll to the elements
 		$('.reference-content a').click(function(){
 			$('.reference-content').slideToggle(300);
@@ -27,10 +27,10 @@ $(function(){
 			}, 300);
 			return false;
 		});
-	
+
 		$(window).bind('scroll resize', positionQuickReference);
 	}
-	
+
 	// check if .reference-wrap should be sticky
 	function positionQuickReference(){
 		var windowTop = $(window).scrollTop();
@@ -48,16 +48,16 @@ $(function(){
 			});
 		}
 	}
-	
+
 	/**
 	 * SIDEBAR
 	 */
-	
+
 	$('.btn-donate').click(function() {
 		$('#frm-paypal').submit();
 		return false;
 	});
-	
+
 	$('.block-signup form').submit(function() {
 		var email = $('#mce-EMAIL').val();
 		if(!isValidEmailAddress(email)){
@@ -65,7 +65,7 @@ $(function(){
 			return false;
 		}
 	});
-	
+
 });
 
 function isValidEmailAddress(emailAddress) {
@@ -73,13 +73,13 @@ function isValidEmailAddress(emailAddress) {
 	return pattern.test(emailAddress);
 };
 
-(function(){
-	var bsa = document.createElement('script');
-	bsa.type = 'text/javascript';
-	bsa.async = true;
-	bsa.src = '//s3.buysellads.com/ac/bsa.js';
-	(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
-})();
+// (function(){
+// 	var bsa = document.createElement('script');
+// 	bsa.type = 'text/javascript';
+// 	bsa.async = true;
+// 	bsa.src = '//s3.buysellads.com/ac/bsa.js';
+// 	(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+// })();
 
 /**
  * Create a cookie
