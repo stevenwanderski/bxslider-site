@@ -1,103 +1,98 @@
 <!DOCTYPE html>
 <head>
   <title><%= @title %> | Responsive jQuery Slider | bxSlider</title>
-	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta name="keywords" content="content slider, responsive image gallery, responsive image gallery, image slider, image fade, image rotator" />
-	<meta name="description" content="Respsonsive jQuery content slider." />
-	<meta name="google-site-verification" content="25AuAMRK4hudMM4ZYCQnmQp9W9XtTtsutIDiZmKnjOo" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="keywords" content="content slider, responsive image gallery, responsive image gallery, image slider, image fade, image rotator" />
+  <meta name="description" content="Respsonsive jQuery content slider." />
+  <meta name="google-site-verification" content="25AuAMRK4hudMM4ZYCQnmQp9W9XtTtsutIDiZmKnjOo" />
 
-	<link rel="stylesheet" href="/lib/jquery.bxslider.css" type="text/css" />
-	<link rel="stylesheet" href="/css/styles.css" type="text/css" />
-	<link rel="stylesheet" href="/css/github.css" type="text/css" />
+  <link rel="stylesheet" href="/lib/jquery.bxslider.css" type="text/css" />
+  <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+  <link rel="stylesheet" href="/css/github.css" type="text/css" />
 
-	<!--[if lt IE 9]>
-	<script src="/js/html5shiv.js"></script>
-	<![endif]-->
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.js"></script>
+  <![endif]-->
 
-	<script src="/js/jquery.min.js"></script>
-	<% if @video %>
-		<script src="/lib/plugins/jquery.fitvids.js"></script>
-	<% end %>
-	<% if @easing %>
-		<script src="/lib/plugins/jquery.easing.1.3.js"></script>
-	<% end %>
-	<script src="/lib/jquery.bxslider.js"></script>
-	<script src="/js/rainbow.min.js"></script>
-	<script src="/js/scripts.js"></script>
+  <script src="/js/jquery.min.js"></script>
+  <% if @video %>
+    <script src="/lib/plugins/jquery.fitvids.js"></script>
+  <% end %>
+  <% if @easing %>
+    <script src="/lib/plugins/jquery.easing.1.3.js"></script>
+  <% end %>
+  <script src="/lib/jquery.bxslider.js"></script>
+  <script src="/js/rainbow.min.js"></script>
+  <script src="/js/scripts.js"></script>
 
-	<script type="text/javascript">
+  <script type="text/javascript">
 
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-36499930-1']);
-	  _gaq.push(['_trackPageview']);
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36499930-1']);
+    _gaq.push(['_trackPageview']);
 
-	  (function() {
-	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
 
-	  // $(function(){
-	  // 	var download_onclick = "_gaq.push(['_trackEvent', 'ZIP', 'Download', 'bxSlider.zip']);";
-	  // 	$('.download a').attr("onClick", download_onclick);
-	  // });
-
-	</script>
+  </script>
 </head>
 
 <body class="<%= @class %>">
 
-	<header>
-		<div class="inner clearfix"><%= erb(:"partials/header", :layout => false) %></div>
-	</header>
+  <header>
+    <div class="inner clearfix"><%= erb(:"partials/header", :layout => false) %></div>
+  </header>
 
-	<section id="main">
-		<div class="inner clearfix">
+  <section id="main">
+    <div class="inner clearfix">
 
-			<%= erb(:"partials/home_slider", :layout => false) if @front %>
+      <%= erb(:"partials/home_slider", :layout => false) if @front %>
 
-			<aside>
-			  <div class="block block-advert">
-			  	<script type="text/javascript" src="http://cdn.yoggrt.com/yoggrt.js?legacyid=1263752&zoneid=1353&key=cb576c7e6424169a9c51747ec0e4a03a&serve=C6SD52Y&placement=bxslidercom" id="_yoggrt_js"></script>
-			  </div>
+      <aside>
+        <div class="block block-advert">
+          <script type="text/javascript" src="http://cdn.yoggrt.com/yoggrt.js?legacyid=1263752&zoneid=1353&key=cb576c7e6424169a9c51747ec0e4a03a&serve=C6SD52Y&placement=bxslidercom" id="_yoggrt_js"></script>
+        </div>
 
-			  <div class="block block-buttons">
-					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="frm-paypal">
-						<input type="hidden" name="cmd" value="_s-xclick">
-						<input type="hidden" name="hosted_button_id" value="V5KXSVDQLUY9J">
-						<input type="submit" value="Buy me a beer" />
-						<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-					</form>
-			    <a href="" class="btn btn-donate"><span class="icon-icomoon-beer"></span> Buy me a beer</a>
-			    <a href="https://github.com/wandoledzep/bxslider-4" target="_blank" class="btn"><span class="icon-icomoon-github"></span> View on Github</a>
-			  </div>
+        <div class="block block-buttons">
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="frm-paypal">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="V5KXSVDQLUY9J">
+            <input type="submit" value="Buy me a beer" />
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+          </form>
+          <a href="" class="btn btn-donate"><span class="icon-icomoon-beer"></span> Buy me a beer</a>
+          <a href="https://github.com/wandoledzep/bxslider-4" target="_blank" class="btn"><span class="icon-icomoon-github"></span> View on Github</a>
+        </div>
 
-				<div class="block block-signup">
-					<form action="http://bxslider.us1.list-manage.com/subscribe/post?u=16b4e3f97dfcc63dead888bd8&amp;id=f176749817" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-						<h4>Receive updates<br />about bxSlider</h4>
-						<input type="text" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email address">
-						<div class="error">A valid email address is required</div>
-						<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-					</form>
-				</div>
+        <div class="block block-signup">
+          <form action="http://bxslider.us1.list-manage.com/subscribe/post?u=16b4e3f97dfcc63dead888bd8&amp;id=f176749817" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <h4>Receive updates<br />about bxSlider</h4>
+            <input type="text" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email address">
+            <div class="error">A valid email address is required</div>
+            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+          </form>
+        </div>
 
-				<div class="block block-v3">
-					<h4>Still using the old<br />slider (v3)?</h4>
-					<a href="/v3">Click here for v3 documentation</a>
-				</div>
+        <div class="block block-v3">
+          <h4>Still using the old<br />slider (v3)?</h4>
+          <a href="/v3">Click here for v3 documentation</a>
+        </div>
 
-				<div class="block block-about">
-				  <h4>Wondering how bxSlider was made?</h4>
-				  <p><a href="/about">Click here to see the annotated source code with a description of the coding process</a></p>
-				</div>
-			</aside>
+        <div class="block block-about">
+          <h4>Wondering how bxSlider was made?</h4>
+          <p><a href="/about">Click here to see the annotated source code with a description of the coding process</a></p>
+        </div>
+      </aside>
 
-			<div id="primary"><%= yield %></div>
+      <div id="primary"><%= yield %></div>
 
-		</div>
-	</section>
+    </div>
+  </section>
 
-	<footer><div class="inner clearfix"><%= erb(:"partials/footer", :layout => false) %></div></footer>
+  <footer><div class="inner clearfix"><%= erb(:"partials/footer", :layout => false) %></div></footer>
 
 </body>
 
