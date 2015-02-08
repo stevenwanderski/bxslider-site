@@ -8,9 +8,9 @@ $(function(){
   /**
    * DOWNLOAD BUTTON
    */
-  $.getJSON("https://api.github.com/repos/stevenwanderski/bxslider-4/tags").done(function(json){
-    $('.download a').attr('href', json[0].zipball_url);
-  });
+  // $.getJSON("https://api.github.com/repos/stevenwanderski/bxslider-4/tags").done(function(json){
+  //   $('.download a').attr('href', json[0].zipball_url);
+  // });
 
   /**
    * QUICK REFERENCE
