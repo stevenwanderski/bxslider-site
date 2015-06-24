@@ -210,7 +210,7 @@ hr {
 ================================================**/
 
 .inner {
-	width: 1000px;
+	width: 1200px;
 	position: relative;
 	margin: 0 auto;
 }
@@ -220,12 +220,12 @@ hr {
 }
 
 #primary {
-	margin: 0 270px 0 0;
+	margin: 0 350px 0 0;
 	position: relative;
 }
 
 aside {
-	width: 230px;
+	width: 300px;
 	float: right;
 }
 
@@ -251,6 +251,12 @@ aside {
 	margin-bottom: 10px;
 	color: #555;
 	font-size: 1em;
+}
+
+.home-slider-wrapper {
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .pictogram {
@@ -902,7 +908,7 @@ footer .twitter {
 @media(max-width: 700px){
 
 	#primary {
-		margin: 0 0 750px 0;
+		margin: 0 0 1100px 0;
 	}
 
 	aside {

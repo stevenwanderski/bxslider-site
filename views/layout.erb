@@ -53,7 +53,7 @@
 
       <aside>
         <div class="block block-advert">
-          <script type="text/javascript" src="http://cdn.yoggrt.com/yoggrt.js?legacyid=1263752&zoneid=1353&key=cb576c7e6424169a9c51747ec0e4a03a&serve=C6SD52Y&placement=bxslidercom" id="_yoggrt_js"></script>
+          <div data-type="ad" data-publisher="bxslider.com" data-format="300x250" data-zone="ros" ></div>
         </div>
 
         <div class="block block-buttons">
@@ -93,6 +93,18 @@
   </section>
 
   <footer><div class="inner clearfix"><%= erb(:"partials/footer", :layout => false) %></div></footer>
+
+  <script type='text/javascript'>
+  function _dmBootstrap(file) {
+      var _dma = document.createElement('script');
+      _dma.type = 'text/javascript';
+      _dma.async = true;
+      _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+  }
+  function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.js'); }
+  (function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.js'); setTimeout(_dmFollowup, 2000); })();
+  </script>
 
 </body>
 
