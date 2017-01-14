@@ -3,7 +3,7 @@ $(function(){
   /**
    * SLIDERUI POPUP
    */
-   if (localStorage.getItem('xslideruiPopupShown') !== 'true') {
+   if (localStorage.getItem('slideruiPopupShown') !== 'true') {
      $.magnificPopup.open({
        items: {
          src: '#sliderui-popup',
