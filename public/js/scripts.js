@@ -1,16 +1,23 @@
 $(function(){
 
+  /**
+   * SLIDERUI POPUP
+   */
+   if (localStorage.getItem('xslideruiPopupShown') !== 'true') {
+     $.magnificPopup.open({
+       items: {
+         src: '#sliderui-popup',
+         type: 'inline'
+       },
+     });
+
+     localStorage.setItem('slideruiPopupShown', 'true');
+   }
+
   $('.home .bxslider').bxSlider({
     auto: true,
     mode: 'fade'
   });
-
-  /**
-   * DOWNLOAD BUTTON
-   */
-  // $.getJSON("https://api.github.com/repos/stevenwanderski/bxslider-4/tags").done(function(json){
-  //   $('.download a').attr('href', json[0].zipball_url);
-  // });
 
   /**
    * QUICK REFERENCE
