@@ -689,6 +689,35 @@ aside .block-signup .error {
 	margin-bottom: 10px;
 }
 
+#carbonads {
+  background: #fff;
+  padding: 8px;
+  border: solid #c2c2c2 1px;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.carbon-img img {
+  display: block;
+  border: solid 1px #c2c2c2;
+}
+
+.carbon-text {
+  font-size: 15px;
+  line-height: 20px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.carbon-poweredby {
+  font-size: 14px;
+  color: #999;
+}
+
+
 /** HEADER
 ================================================**/
 
@@ -1061,16 +1090,7 @@ footer .separator {
 
 	#primary {
 		font-size: 100%;
-		margin-bottom: 850px;
+		margin-bottom: 950px;
 	}
 
 }
-
-/*body .one .bsa_it_ad { background: transparent; border: none; font-family: inherit; padding: 0 15px 0 10px; margin: 0; text-align: right; }*/
-body .one .bsa_it_ad:hover img { -moz-box-shadow: 0 0 3px #000; -webkit-box-shadow: 0 0 3px #000; box-shadow: 0 0 3px #000; }
-body .one .bsa_it_ad .bsa_it_i { display: block; padding: 0; float: none; margin: 0 0 5px; }
-body .one .bsa_it_ad .bsa_it_i img { padding: 0; border: none; }
-body .one .bsa_it_ad .bsa_it_t { padding: 6px 0; }
-body .one .bsa_it_ad .bsa_it_d { padding: 0; font-size: 12px; color: #333; }
-body .one .bsa_it_p { display: none; }
-body #bsap_aplink, body #bsap_aplink:hover { display: block; font-size: 10px; margin: 12px 15px 0; text-align: right; }
