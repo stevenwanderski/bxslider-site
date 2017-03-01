@@ -690,33 +690,50 @@ aside .block-signup .error {
 }
 
 #carbonads {
-  background: #fff;
-  padding: 8px;
-  border: solid #c2c2c2 1px;
+  display: block;
+  overflow: hidden;
+  font-size: 12px;
+  font-family: Verdana, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+.carbon-wrap {
+  padding: 1em;
+  border: solid 1px #d9d9d9;
+  border-bottom: 0;
+  background-color: #ffffff;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
 }
 
 .carbon-img {
-  display: block;
-  margin-bottom: 10px;
+  float: left;
+  margin-right: 1em;
 }
 
 .carbon-img img {
   display: block;
-  border: solid 1px #c2c2c2;
 }
 
 .carbon-text {
-  font-size: 15px;
-  line-height: 20px;
   display: block;
-  margin-bottom: 8px;
+  float: left;
+  max-width: calc(100% - 130px - 1em);
+  text-align: left;
 }
 
 .carbon-poweredby {
-  font-size: 14px;
-  color: #999;
+  display: block;
+  padding: .5em 0;
+  background-color: #414141;
+  color: #fff !important;
+  text-align: center;
+  font-size: 10px;
 }
-
 
 /** HEADER
 ================================================**/
